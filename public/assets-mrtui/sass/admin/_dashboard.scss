@@ -1,0 +1,68 @@
+#dashboard.menu-section {
+    .card-content {
+        margin-bottom: 20px;
+        justify-content: space-between;
+        .card {
+            display: flex;
+            // background-color: $white;
+            border-radius: 15px;
+            padding-top: 20px;
+            width: 24%;
+            flex-direction: row;
+            padding-bottom: 20px;
+            align-items: center;
+            gap: 0.8rem;
+            border: none;
+            color: $white;
+            .card-icon {
+                margin-left: 1rem;
+                font-size: 46px;
+            }
+            .card-data {
+                p {
+                    font-size: 12px;
+                    font-weight: 300;
+                    margin-bottom: 0;
+                }
+                h5 {
+                    font-weight: 600;
+                }
+            }
+
+            @media #{$xl} {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 49%;
+            }
+            @media #{$md} {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+        }
+    }
+    .chart-content {
+        gap: 1rem;
+        justify-content: space-between;
+        .card {
+            background-color: $white;
+            border-radius: 15px;
+            border: none;
+            &:nth-child(2) {
+                width: 63%;
+            }
+            &:nth-child(3) {
+                width: 34%;
+            }
+            padding: 20px;
+            @media #{$lg} {
+                padding-bottom: 25px;
+                &:nth-child(2),
+                &:nth-child(3) {
+                    width: 100%;
+                }
+                height: auto !important;
+            }
+        }
+    }
+}

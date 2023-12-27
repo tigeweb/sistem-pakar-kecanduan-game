@@ -1,0 +1,18 @@
+#footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    @media #{$sm} {
+        font-size: 10px;
+    }
+    padding-left: min(2rem, 2vw);
+    padding-right: min(2rem, 2vw);
+    @media #{$md} {
+        padding-left: calc(min(20px, 2vw) + 2vh + 2vw);
+        padding-right: calc(min(20px, 2vw) + 2vh + 2vw);
+    }
+    p a {
+        text-decoration: none;
+        font-weight: 500;
+    }
+}

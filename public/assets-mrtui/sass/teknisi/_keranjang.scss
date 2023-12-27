@@ -1,0 +1,132 @@
+#keranjang {
+    min-height: 100vh;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 8rem;
+    .keranjang-area {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: calc(min(2rem, 3vw) * -1);
+        @media (max-width: 400px) {
+            margin-top: calc(min(2rem, 7vw) * -1);
+        }
+        .card-keranjang {
+            display: flex;
+            flex-wrap: wrap;
+            width: 40%;
+            border-radius: 10px;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: space-between;
+            color: $white;
+            padding: 1rem;
+            background-color: $main_bold;
+            @media #{$md} {
+                width: 95%;
+            }
+            .card-detail {
+                margin-bottom: 1rem;
+                &:nth-child(1),
+                &:nth-child(3) {
+                    width: 58%;
+                }
+                &:nth-child(2),
+                &:nth-child(4) {
+                    width: 40%;
+                }
+                h5 {
+                    @media #{$md} {
+                        font-size: 12px;
+                    }
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+                p {
+                    @media #{$md} {
+                        font-size: 10px;
+                    }
+                    font-size: 14px;
+                    font-weight: 100;
+                    margin-bottom: 0;
+                }
+                .status {
+                    display: flex;
+                    align-items: center;
+                    .stand-by {
+                        background-color: $stand_by;
+                        border-radius: 50%;
+                        width: 8px;
+                        height: 8px;
+                        margin-right: 5px;
+                    }
+                    .limbah {
+                        background-color: $limbah;
+                        border-radius: 50%;
+                        width: 8px;
+                        height: 8px;
+                        margin-right: 5px;
+                    }
+                    .garansi {
+                        background-color: $garansi;
+                        border-radius: 50%;
+                        width: 8px;
+                        height: 8px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+            .card-keterangan {
+                width: 100%;
+                margin-bottom: 2rem;
+                h5 {
+                    @media #{$md} {
+                        font-size: 12px;
+                    }
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+                p {
+                    @media #{$md} {
+                        font-size: 10px;
+                    }
+                    font-size: 14px;
+                    font-weight: 100;
+                    margin-bottom: 0;
+                }
+            }
+            .card-btn {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                button {
+                    width: 48%;
+                    @media #{$md} {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .permintaan {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        label {
+            width: 100%;
+        }
+        input {
+            width: 88%;
+        }
+        h5 {
+            width: 10%;
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+}

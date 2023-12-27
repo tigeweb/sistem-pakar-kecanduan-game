@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Rubik:300,400,500,700&display=swap");
+$font_stack: "Poppins", sans-serif;
+
+// WARNA
+$white: #fff;
+$bg_admin: #f7f7f7;
+$black: #2b2b2b;
+$black_75: rgba(43, 43, 43, 0.075);
+
+$second: #ffed48;
+$second_75: rgba(255, 237, 72, 0.75);
+$second_50: rgba(255, 237, 72, 0.5);
+$second_25: rgba(255, 237, 72, 0.25);
+
+$del: #df3434;
+$del_75: rgba(223, 52, 52, 0.75);
+$del_50: rgba(223, 52, 52, 0.5);
+$del_25: rgba(223, 52, 52, 0.25);
+
+$suc: #3dee44;
+$suc_75: rgba(61, 238, 68, 0.75);
+$suc_50: rgba(61, 238, 68, 0.5);
+$suc_25: rgba(61, 238, 68, 0.25);
+
+$inf: #b6d7ff;
+$inf_75: rgba(182, 215, 255, 0.75);
+$inf_50: rgba(182, 215, 255, 0.5);
+$inf_25: rgba(182, 215, 255, 0.25);
+
+$main: #415bdb;
+$main_75: rgba(65, 91, 219, 0.75);
+$main_50: rgba(65, 91, 219, 0.5);
+$main_25: rgba(65, 91, 219, 0.25);
+
+$oren: #ed8000;
+$oren_75: rgba(237, 128, 0, 0.75);
+$oren_50: rgba(237, 128, 0, 0.5);
+$oren_25: rgba(237, 128, 0, 0.25);
+
+$main_bold: #273681;
+$main_bold_75: rgba(39, 54, 129, 0.75);
+$main_bold_50: rgba(39, 54, 129, 0.5);
+$main_bold_25: rgba(39, 54, 129, 0.25);
+
+$stand_by: #66abff;
+$limbah: #dddf6a;
+$garansi: #65e178;
+
+// MEDIA
+$sm: "(max-width: 575.98px)";
+$md: "(max-width: 767.98px)";
+$lg: "(max-width: 991.98px)";
+$xl: "(max-width: 1199.98px)";
+$xxl: "(max-width: 1399.98px)";

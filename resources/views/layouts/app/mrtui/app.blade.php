@@ -11,20 +11,20 @@
         {{ env('APP_NAME') }}
     </title>
 
-    @include('layouts.app-mrtui.mrtui.head')
+    @include('layouts.app.mrtui.head')
 </head>
 
 <body>
     <section id="admin">
-        @include('layouts.app-mrtui.mrtui.sidebar')
+        @include('layouts.app.mrtui.sidebar')
         <section id="main-admin">
-            @include('layouts.app-mrtui.mrtui.navbar')
+            @include('layouts.app.mrtui.navbar')
             @yield('contents')
-            @include('layouts.app-mrtui.mrtui.footer')
+            @include('layouts.app.mrtui.footer')
         </section>
     </section>
 
-    @include('layouts.app-mrtui.mrtui.scripts')
+    @include('layouts.app.mrtui.scripts')
 </body>
 
 </html>

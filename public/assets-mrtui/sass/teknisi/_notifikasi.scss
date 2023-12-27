@@ -1,0 +1,53 @@
+#notifikasi {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    @media #{$md} {
+        width: 100%;
+    }
+    margin-bottom: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+    .card-area {
+        margin-top: calc(min(2rem, 3vw) * -1);
+        @media (max-width: 400px) {
+            margin-top: calc(min(2rem, 7vw) * -1);
+        }
+        .card-notif {
+            padding: min(2rem, 5vw);
+            background-color: $main_bold;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            color: $white;
+            border-radius: 10px;
+            .title {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 80%;
+                h5 {
+                    @media #{$md} {
+                        font-size: 14px;
+                    }
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-bottom: 0;
+                }
+                p {
+                    @media #{$md} {
+                        font-size: 14px;
+                    }
+                    font-size: 18px;
+                    font-weight: 100;
+                    margin-bottom: 0;
+                }
+            }
+            .icon {
+                width: min(3rem, 12vw);
+                height: min(3rem, 12vw);
+                border-radius: 50%;
+            }
+        }
+    }
+}

@@ -1,15 +1,15 @@
-@extends('layout.auth._main')
-@section('auth_body')
+@extends('layouts.auth.mrtui.app')
+@section('contents')
     @include('pages.auth.teknisi')
     @include('pages.auth.admin')
 @endsection
 
 <x-assets.sweetalert />
 
-@push('scripts')
+@push('script')
     <x-password-eye-script />
 
-    <script src="{{ asset('assets/js/auth/ajax/login-submit.js') }}"></script>
+    <script src="{{ asset('assets-mrtui/js/auth/login-submit.js') }}"></script>
     <script>
         $(document).ready(function() {
             loginSubmit('loginSubmit_admin', 'admin');

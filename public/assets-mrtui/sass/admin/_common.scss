@@ -1,0 +1,87 @@
+*::-webkit-scrollbar {
+    width: 5px;
+    height: 6px;
+}
+*::-webkit-scrollbar-track {
+    // background-color: #f1f1f1;
+    background-color: transparent;
+    border-radius: 3px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #aaaa;
+    border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #c8c8c8;
+}
+
+body {
+    font-family: $font_stack;
+    padding: 0;
+    margin: 0;
+    background-color: $bg_admin;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.menu-section {
+    padding-left: min(2rem, 2vw);
+    padding-right: min(2rem, 2vw);
+    @media #{$md} {
+        padding-left: calc(min(20px, 2vw) + 2vh + 2vw);
+        padding-right: calc(min(20px, 2vw) + 2vh + 2vw);
+    }
+    min-height: 80vh;
+}
+
+.text-main {
+    color: $main;
+}
+.text-second {
+    color: $second;
+}
+.text-main-bold {
+    color: $main_bold;
+}
+.text-del {
+    color: $del;
+}
+.text-inf {
+    color: $inf;
+}
+.text-stand-by {
+    color: $stand_by;
+}
+.text-limbah {
+    color: $limbah;
+}
+.text-garansi {
+    color: $garansi;
+}
+.bg-main {
+    background-color: $main;
+}
+.bg-second {
+    background-color: $second;
+}
+.bg-main-bold {
+    background-color: $main_bold;
+}
+.bg-del {
+    background-color: $del;
+}
+.bg-inf {
+    background-color: $inf;
+}
+.bg-stand-by {
+    background-color: $bg_stand_by;
+}
+.bg-limbah {
+    background-color: $bg_limbah;
+}
+.bg-garansi {
+    background-color: $bg_garansi;
+}

@@ -1,9 +1,9 @@
 <section id="admin_login">
-    <img src="{{ asset('assets/image/bg_login.png') }}" class="bg" alt="">
+    <img src="{{ asset('assets-mrtui/images/bg_login.png') }}" class="bg" alt="">
     <div class="card-login">
         <div class="card-logo">
-            <img src="{{ asset('assets/image/logo_mrt.png') }}" alt="">
-            <h5>Material Return Terpadu</h5>
+            <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO_MRT->value) }}" alt="">
+            <h5>{{ get_setting(\App\Enums\SettingEnum::LOGO_TITLE->value) }}</h5>
         </div>
         <div class="card-title">
             <h5>Selamat Datang👋</h5>

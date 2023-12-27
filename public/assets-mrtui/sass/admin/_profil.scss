@@ -1,0 +1,40 @@
+#profil {
+    .foto-profil {
+        position: relative;
+        min-width: 100px;
+        width: min(150px, 10vw);
+        img {
+            border-radius: 50%;
+            border: 6px solid $main;
+            width: 100%;
+        }
+        .foto-edit {
+            background-color: $main_bold;
+            border-radius: 50%;
+            color: $white;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            border: none;
+            padding: 0.3rem 0.6rem;
+        }
+    }
+    .button-area {
+        margin-top: 30px;
+        .edit-profil {
+            margin-right: 1.5rem;
+            @media #{$md} {
+                margin-right: 0;
+            }
+        }
+        .edit-profil,
+        .edit-password {
+            padding: 0.5rem 6rem;
+            margin-bottom: 0.8rem;
+            @media #{$md} {
+                width: 100%;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    }
+}

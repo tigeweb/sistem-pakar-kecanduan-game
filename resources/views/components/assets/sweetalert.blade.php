@@ -8,7 +8,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endpush
 
-@push('scripts')
+@push('script')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.32/sweetalert2.all.min.js"
         integrity="sha512-zB7yJLSASiSevQmWCrQaq+z/f5zRIa884hwWgmK1oI3MfolIzKcpDtyfBsrGqUi/hMCObVwr/+SZTByOqh0zkQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

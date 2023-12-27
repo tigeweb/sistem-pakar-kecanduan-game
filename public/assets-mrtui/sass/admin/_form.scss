@@ -1,0 +1,122 @@
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+.ck-editor__editable_inline:not(.ck-comment__input *) {
+    height: 300px;
+    overflow-y: auto;
+}
+.select2.select2-container {
+    width: 100% !important;
+    .select2-selection {
+        border: 2px solid #415bdb !important;
+        height: 3rem;
+        padding-top: 0.5rem;
+        padding-left: 0.3rem;
+        border-radius: 25px;
+        .select2-selection__arrow {
+            top: 10px !important;
+            right: 10px !important;
+            b {
+                transition: all 0.3s;
+            }
+        }
+        &:focus {
+            border-color: $main_25;
+            outline: 0;
+            box-shadow: 0 0 0 0.25rem $main_25;
+        }
+    }
+}
+.select2-dropdown {
+    border: 2px solid #415bdb !important;
+    border-top: none !important;
+    border-radius: 0 0 20px 20px !important;
+    .select2-search__field {
+        border: 1px solid $main !important;
+        &:focus {
+            border-color: $main_25;
+            outline: 0;
+            box-shadow: 0 0 0 0.1rem $main_25;
+            @media #{$md} {
+                &::placeholder {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+.select2-results__option.select2-results__message {
+    height: 40px;
+    text-align: center;
+}
+.select2-results__option--selectable:last-child {
+    border-radius: 0 0 20px 20px !important;
+}
+.form-control,
+.form-select {
+    border: 2px solid $main;
+    &:not(textarea) {
+        border-radius: 25px;
+    }
+    padding: 0.75rem 1rem;
+    &:focus {
+        border-color: $main_25;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem $main_25;
+    }
+    @media #{$md} {
+        &::placeholder {
+            font-size: 12px;
+        }
+    }
+}
+textarea.form-control {
+    border-radius: 10px;
+}
+input {
+    transition: all 0.3s;
+}
+textarea {
+    transition: all 0.1s;
+}
+.pw-area {
+    position: relative;
+    .pw-eye {
+        cursor: pointer;
+        font-size: 18px;
+        position: absolute;
+        right: 13px;
+        top: 50%;
+        transform: translateY(-50%);
+        // top: calc(50% + 3px);
+    }
+}
+.form-label {
+    font-weight: 550;
+}
+.form-check {
+    .form-check-input {
+        border: 1.5px solid lighten($black, 60%);
+        transition: all 0.3s;
+        &:checked {
+            background-color: $main;
+            border-color: $main;
+        }
+        &:focus {
+            border-color: $main_bold;
+            box-shadow: 0 0 0 0.25rem $main_25;
+        }
+    }
+    .form-check-label {
+        font-weight: 400;
+    }
+}
+.form-preview {
+    object-fit: cover;
+    width: min(175px, 25vw);
+    padding: 1rem;
+    aspect-ratio: 1/1;
+}

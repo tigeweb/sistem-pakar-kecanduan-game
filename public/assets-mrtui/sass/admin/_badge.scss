@@ -1,0 +1,39 @@
+.badge-main,
+.badge-second,
+.badge-del,
+.badge-inf,
+.badge-darker,
+.badge-oren,
+.badge-suc {
+    padding: 6px 1rem;
+    border-radius: 25px;
+    font-weight: 500;
+}
+.badge-main {
+    color: $main;
+    background-color: $main_25;
+}
+.badge-second {
+    color: darken($second, 25%);
+    background-color: darken($second_25, 25%);
+}
+.badge-del {
+    color: $del;
+    background-color: $del_25;
+}
+.badge-inf {
+    color: darken($inf, 25%);
+    background-color: darken($inf_25, 25%);
+}
+.badge-darker {
+    color: $main_bold;
+    background-color: $main_bold_25;
+}
+.badge-oren {
+    color: $oren;
+    background-color: $oren_25;
+}
+.badge-suc {
+    color: $suc;
+    background-color: $suc_25;
+}

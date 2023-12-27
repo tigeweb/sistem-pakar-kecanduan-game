@@ -1,0 +1,57 @@
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes notifShow {
+    0% {
+        transform: scale(1, 0);
+        display: flex;
+    }
+    100% {
+        transform: scale(1, 1);
+        display: flex;
+    }
+}
+@keyframes notifHide {
+    0% {
+        transform: scale(1, 1);
+        display: flex;
+    }
+    95% {
+        display: flex;
+    }
+    100% {
+        transform: scale(1, 0);
+        display: none;
+    }
+}
+@keyframes dropdownShow {
+    0% {
+        transform: scale(1, 0);
+        display: block;
+    }
+    100% {
+        transform: scale(1, 1);
+        display: block;
+    }
+}
+@keyframes dropdownHide {
+    0% {
+        transform: scale(1, 1);
+        display: block;
+    }
+    95% {
+        display: block;
+    }
+    100% {
+        transform: scale(1, 0);
+        display: none;
+    }
+}

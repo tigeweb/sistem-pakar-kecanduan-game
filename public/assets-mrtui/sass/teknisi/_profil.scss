@@ -1,0 +1,74 @@
+#profil-teknisi {
+    margin-bottom: 8rem;
+    width: 95%;
+    @media #{$md} {
+        width: 100%;
+    }
+    margin-left: auto;
+    margin-right: auto;
+    .foto-profil {
+        cursor: pointer;
+        position: relative;
+        border-radius: 50%;
+        width: min(7rem, 30vw);
+        aspect-ratio: 1/1;
+        border: 2px solid $main_bold;
+        img {
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            aspect-ratio: 1/1;
+        }
+        .icon {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: $second;
+            width: min(2rem, 9vw);
+            height: min(2rem, 9vw);
+        }
+    }
+    .detail-profil {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2rem;
+        .keterangan {
+            width: 33%;
+            margin-bottom: 1rem;
+            @media #{$md} {
+                width: 50%;
+            }
+            h5 {
+                @media #{$md} {
+                    font-size: 16px;
+                }
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+            p {
+                @media #{$md} {
+                    font-size: 14px;
+                }
+                font-weight: 400;
+                margin-bottom: 0;
+            }
+        }
+    }
+    .logout {
+        margin-top: 2rem;
+        width: 25%;
+        @media #{$md} {
+            width: 50%;
+        }
+        @media #{$sm} {
+            width: 100% !important;
+        }
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+}

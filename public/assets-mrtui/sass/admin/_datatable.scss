@@ -1,0 +1,121 @@
+.datatable .dataTables_wrapper {
+    width: 100%;
+    margin: 0 auto;
+    @media #{$md} {
+        .dataTables_length,
+        .dataTables_filter {
+            text-align: start;
+            margin-bottom: 10px;
+            input {
+                width: auto;
+                @media #{$md} {
+                    width: 100%;
+                }
+                @media #{$sm} {
+                    width: 70%;
+                }
+            }
+        }
+        .dataTables_info {
+            text-align: start;
+        }
+        span.select-item,
+        span.select-info {
+            display: contents !important;
+        }
+    }
+    .dataTables_info {
+        padding-top: 10px !important;
+    }
+    .dataTables_filter {
+        display: flex;
+        align-items: end;
+    }
+    .dataTables_scrollHead .dataTables_scrollHeadInner {
+        min-width: 100%;
+        table {
+            min-width: 100%;
+            tr {
+                color: $white;
+                background-color: $main;
+                th {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+            }
+            .select-checkbox {
+                padding: 0 20px;
+                position: relative;
+                cursor: pointer;
+                &::before {
+                    content: " ";
+                    margin-top: -6px;
+                    margin-left: -6px;
+                    border: 1px solid $white;
+                    border-radius: 3px;
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 12px;
+                    height: 12px;
+                    box-sizing: border-box;
+                }
+                &::after {
+                    content: "";
+                }
+                &.selected {
+                    &:after {
+                        content: "✓";
+                        position: absolute;
+                        margin-top: -6px;
+                        margin-left: -6px;
+                        font-size: 20px;
+                        text-align: center;
+                        top: 50%;
+                        left: 50%;
+                        width: 12px;
+                        height: 12px;
+                        box-sizing: border-box;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    .dataTables_scrollBody {
+        table {
+            min-width: 100% !important;
+            .select-checkbox {
+                padding: 10px 20px;
+                cursor: pointer;
+                &:after {
+                    margin-top: -18px;
+                }
+            }
+            td {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+    .dataTables_paginate {
+        margin-top: 15px;
+        .pagination {
+            flex-wrap: wrap;
+        }
+        .paginate_button.page-item {
+            &:not(.disabled) {
+                a {
+                    color: $main;
+                }
+            }
+            &.active {
+                background-color: $main;
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}

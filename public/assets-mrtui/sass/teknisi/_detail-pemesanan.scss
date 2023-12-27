@@ -1,0 +1,280 @@
+#riwayat {
+    .detail-area {
+        #detail_pemesanan {
+            .title-area {
+                &:nth-child(2) {
+                    margin-bottom: 1rem;
+                }
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                width: 75%;
+                @media #{$lg} {
+                    width: 100%;
+                }
+                margin-top: 1.5rem;
+                .isi {
+                    width: 87.5%;
+                    h5 {
+                        font-size: 22px;
+                        @media #{$md} {
+                            font-size: 18px;
+                        }
+                        margin-bottom: 0.2rem;
+                        font-weight: 600;
+                    }
+                    p {
+                        font-size: 12px;
+                        @media #{$md} {
+                            font-size: 10px;
+                        }
+                        font-weight: 300;
+                        width: 90%;
+                    }
+                }
+                .icon {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 24px;
+                    @media #{$md} {
+                        font-size: 20px;
+                    }
+                    width: 12.5%;
+                    color: $white;
+                    #download_dokumen {
+                        color: $white;
+                        height: 47px;
+                        width: 47px;
+                        @media #{$md} {
+                            height: 42px;
+                            width: 42px;
+                        }
+                        aspect-ratio: 1/1;
+                        background-color: $main_bold;
+                        cursor: pointer;
+                        &.disabled {
+                            cursor: default;
+                            background-color: lighten($main_bold, 30%);
+                        }
+                        &:disabled {
+                            cursor: default;
+                            background-color: lighten($main_bold, 30%);
+                        }
+                    }
+                    .bi-exclamation-triangle {
+                        background-color: $del;
+                    }
+                    .bi-check-lg {
+                        background-color: $suc;
+                    }
+                    #download_dokumen,
+                    i {
+                        position: relative;
+                        border-radius: 50%;
+                        padding: 0.3rem 0.7rem;
+                        @media #{$md} {
+                            padding: 0.3rem 0.65rem;
+                        }
+                        .pending,
+                        .ready,
+                        .reject {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: min(14px, 4vw);
+                            height: min(14px, 4vw);
+                            border-radius: 50%;
+                        }
+                        .pending {
+                            background-color: $second;
+                        }
+                        .ready {
+                            background-color: $suc;
+                        }
+                        .reject {
+                            background-color: $del;
+                        }
+                    }
+                }
+            }
+            .data-pemesanan {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                .card-pemesanan {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 40%;
+                    border-radius: 10px;
+                    margin-left: 0.5rem;
+                    margin-right: 0.5rem;
+                    margin-bottom: 1rem;
+                    justify-content: space-between;
+                    color: $white;
+                    height: max-content;
+                    background-color: $main_bold;
+                    @media #{$md} {
+                        width: 95%;
+                    }
+                    .card-date {
+                        width: 100%;
+                        background-color: $main;
+                        border-radius: 10px 10px 0 0;
+                        text-align: center;
+                        padding-bottom: 0.5rem;
+                        padding-top: 0.5rem;
+                        margin-bottom: 0.8rem;
+                        font-size: 14px;
+                        @media #{$md} {
+                            padding-bottom: 0.6rem;
+                            padding-top: 0.6rem;
+                            font-size: 12px;
+                        }
+                        font-weight: 500;
+                    }
+                    .card-detail {
+                        margin-bottom: 1rem;
+                        &:nth-child(2),
+                        &:nth-child(4),
+                        &:nth-child(7) {
+                            padding-left: 1rem;
+                            width: 58%;
+                        }
+                        &:nth-child(3),
+                        &:nth-child(5),
+                        &:nth-child(8) {
+                            padding-right: 1rem;
+                            width: 40%;
+                        }
+                        h5 {
+                            @media #{$md} {
+                                font-size: 12px;
+                            }
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-bottom: 0;
+                        }
+                        p {
+                            @media #{$md} {
+                                font-size: 10px;
+                            }
+                            font-size: 14px;
+                            font-weight: 100;
+                            margin-bottom: 0;
+                        }
+                        .status {
+                            display: flex;
+                            align-items: center;
+                            .stand-by {
+                                background-color: $stand_by;
+                                border-radius: 50%;
+                                width: 8px;
+                                height: 8px;
+                                margin-right: 5px;
+                            }
+                            .limbah {
+                                background-color: $limbah;
+                                border-radius: 50%;
+                                width: 8px;
+                                height: 8px;
+                                margin-right: 5px;
+                            }
+                            .garansi {
+                                background-color: $garansi;
+                                border-radius: 50%;
+                                width: 8px;
+                                height: 8px;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                    .card-keterangan {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        width: 100%;
+                        margin-bottom: 2rem;
+                        h5 {
+                            @media #{$md} {
+                                font-size: 12px;
+                            }
+                            font-size: 14px;
+                            font-weight: 600;
+                            margin-bottom: 0;
+                        }
+                        p {
+                            @media #{$md} {
+                                font-size: 10px;
+                            }
+                            font-size: 14px;
+                            font-weight: 100;
+                            margin-bottom: 0;
+                        }
+                    }
+                    .card-img {
+                        h5 {
+                            width: 100%;
+                        }
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: 1rem;
+                        .img {
+                            width: 100%;
+                            img {
+                                width: 100%;
+                                border-radius: 10px;
+                                margin-bottom: 1rem;
+                                height: min(350px, 50vw);
+                                min-height: 200px;
+                                object-fit: cover;
+                            }
+                        }
+                    }
+                    .card-btn {
+                        padding-left: 1rem;
+                        padding-right: 1rem;
+                        padding-bottom: 1rem;
+                        width: 100%;
+                        .pending button {
+                            font-weight: 500;
+                            @media #{$md} {
+                                font-size: 12px;
+                            }
+                        }
+                        .ready {
+                            display: flex;
+                            justify-content: space-between;
+                            button {
+                                width: 49%;
+                                padding: 0.5rem 1rem;
+                                @media #{$md} {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#pengajuan-edit {
+    .permintaan {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        label {
+            width: 100%;
+        }
+        input {
+            width: 88%;
+        }
+        h5 {
+            width: 10%;
+            font-weight: 600;
+            font-size: 16px;
+        }
+    }
+}

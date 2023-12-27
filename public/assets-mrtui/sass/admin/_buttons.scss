@@ -1,0 +1,152 @@
+.btn-main {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: $main;
+    color: $white;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken($main, 20%);
+    }
+    &:focus {
+        background-color: darken($main, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($main, 20%);
+    }
+}
+.btn-second {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: $second;
+    color: $black;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken($second, 20%);
+    }
+    &:focus {
+        background-color: darken($second, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($second, 20%);
+    }
+}
+.btn-del {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: $del;
+    color: $white;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken($del, 20%);
+    }
+    &:focus {
+        background-color: darken($del, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($del, 20%);
+    }
+}
+.btn-inf {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: $inf;
+    color: $black;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken($inf, 20%);
+    }
+    &:focus {
+        background-color: darken($inf, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($inf, 5%);
+    }
+}
+.btn-suc {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: $suc;
+    color: $black;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken($suc, 20%);
+    }
+    &:focus {
+        background-color: darken($suc, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($suc, 20%);
+    }
+}
+.btn-darker {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: $main_bold;
+    color: $white;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken($main_bold, 20%);
+    }
+    &:focus {
+        background-color: darken($main_bold, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($main_bold, 30%);
+    }
+}
+.btn-oren {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: $oren;
+    color: $white;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken($oren, 20%);
+    }
+    &:focus {
+        background-color: darken($oren, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($oren, 30%);
+    }
+}
+.btn-lokasi {
+    transition: all 0.3s;
+    border: none;
+    border-radius: 20px;
+    background-color: #48fff4;
+    color: $black;
+    padding: 0.5rem 0.75rem;
+    &:hover {
+        background-color: darken(#48fff4, 20%);
+    }
+    &:focus {
+        background-color: darken(#48fff4, 20%);
+    }
+    &.disable,
+    &:disabled {
+        cursor: default;
+        background-color: lighten($inf, 5%);
+    }
+}

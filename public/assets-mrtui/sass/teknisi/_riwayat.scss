@@ -1,0 +1,113 @@
+#riwayat {
+    margin-bottom: 8rem;
+    .detail-area {
+        .detail {
+            transition: opacity 0.3s;
+            &.show {
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+                display: block;
+            }
+            &.hide {
+                opacity: 0;
+                transition: opacity 0.3s ease-in-out;
+                position: absolute;
+                transform: scale(1, 0);
+                top: -1000vh;
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+    .nav-area {
+        background-color: $main_bold;
+        width: min(40rem, 100%);
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+        margin-top: calc(min(2rem, 3vw) * -1);
+        @media (max-width: 400px) {
+            margin-top: calc(min(2rem, 7vw) * -1);
+        }
+        .btn-nav {
+            width: 49%;
+            border-radius: 10px;
+            background-color: $main;
+            border: none;
+            text-align: start;
+            padding: min(1.5rem, 4vw);
+            display: flex;
+            flex-direction: column;
+            color: $white;
+            transition: background-color 0.3s;
+            &:not(.active) {
+                background-color: $main_25;
+            }
+            h1 {
+                font-size: 24px;
+                margin-bottom: 0.2rem;
+                font-weight: 600;
+            }
+            p {
+                margin-bottom: 0;
+                font-weight: 300;
+                font-size: min(14px, 3vw);
+            }
+        }
+    }
+    & ~ #btn-next {
+        &.hide {
+            transition: opacity 0.3s;
+            &.show {
+                opacity: 1;
+                animation: show_block 0.3s;
+                display: block;
+            }
+            &.hide {
+                opacity: 0;
+                animation: hide_block 0.3s;
+                display: none;
+            }
+        }
+    }
+}
+
+#data-riwayat {
+    .no-data {
+        display: flex;
+        margin-top: 1rem;
+        margin-bottom: 8rem;
+        background-color: $del;
+        color: $white;
+        border-radius: 15px;
+        max-width: 600px;
+        padding: 1rem 1.3rem;
+        .icon {
+            width: 100px;
+            img {
+                width: 100%;
+            }
+        }
+        .title {
+            margin-left: 1.3rem;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            h5 {
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+            p {
+                font-size: 10px;
+                margin-bottom: 0;
+            }
+        }
+        &.hide {
+            display: none;
+        }
+    }
+}
