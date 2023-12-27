@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,17 +16,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect(route('login'));
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Akses Superadmin & Admin
+Route::middleware(['auth', 'permission:akses_menu_superadmin|akses_menu_admin'])->group(function () {
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // Dashboard
+    Route::controller(DashboardController::class)->name('dashboard.')->group(function () {
+        Route::get('dashboard', 'index')->name('index');
+    });
+    // End Dashboard
+
 });
+// End Akses Superadmin & Admin
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

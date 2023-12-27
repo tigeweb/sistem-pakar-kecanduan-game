@@ -15,23 +15,26 @@ class UsersTableSeeder extends Seeder
      */
     public function run(): void
     {
-        User::factory()->create([
+        $superadmin = User::factory()->create([
             'name' => 'Superadmin',
-            'username' => 'superadmin',
-            'password' => Hash::make('2'),
-            'no_hp' => '000',
+            'username' => Permission::USERNAME_SUPERADMIN,
         ]);
+        $superadmin->assignRole(Permission::ROLE_SUPERADMIN);
 
-        // if (env('SEEDER_USERS')) {
-        //     $users = User::factory(env('SEEDER_USERS'))->create();
-        //     foreach ($users as $user) {
-        //         $user->assignRole(fake()->randomElement([
-        //             Permission::ROLE_TEKNISI,
-        //             Permission::ROLE_ADMIN,
-        //             Permission::ROLE_G_INDUK,
-        //             Permission::ROLE_SUPERADMIN
-        //         ]));
-        //     }
-        // }
+        $admin = User::factory()->create([
+            'name' => 'Admin',
+            'username' => 'admin',
+        ]);
+        $admin->assignRole(Permission::ROLE_ADMIN);
+
+        if (env('SEEDER_USERS')) {
+            $users = User::factory(env('SEEDER_USERS'))->create();
+            foreach ($users as $user) {
+                $user->assignRole(fake()->randomElement([
+                    Permission::ROLE_SUPERADMIN,
+                    Permission::ROLE_ADMIN,
+                ]));
+            }
+        }
     }
 }
