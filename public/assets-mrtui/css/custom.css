@@ -1,0 +1,33 @@
+.no-invalid-style {
+    background-image: none !important;
+}
+
+/* search dibuat kekanan ujung */
+.datatable .dataTables_wrapper .dataTables_filter {
+    display: block;
+}
+
+input::placeholder {
+    text-transform: capitalize;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+    padding-right: 30px;
+}
+
+/* .select2.select2-container {
+    width: 40% !important;
+} */
+
+.dataTables_length .select2.select2-container {
+    width: 40% !important;
+}
+
+.input-no-style {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
