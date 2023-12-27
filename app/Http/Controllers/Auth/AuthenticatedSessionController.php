@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Config;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -43,6 +44,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect(route('login'))->with('success', 'Logout Berhasil');
+        return redirect(route('login'))->with('success', Config::get('messages.success.logout'));
     }
 }
