@@ -2,6 +2,7 @@
 
 use App\Enums\SettingEnum;
 use App\Models\Superadmin\Setting;
+use Carbon\Carbon;
 
 if (!function_exists('get_setting')) {
     function get_setting($tipe)
@@ -20,5 +21,14 @@ if (!function_exists('get_value_enums')) {
         }
 
         return $values;
+    }
+}
+
+if (!function_exists('format_date_with_day')) {
+    function format_date_with_day($date)
+    {
+        $carbonDate = Carbon::parse($date);
+
+        return $carbonDate->isoFormat('dddd, D MMMM Y');
     }
 }
