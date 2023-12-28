@@ -22,7 +22,3 @@
                 alt="profil-image">
         </a>
     </div>
-
-    {{-- @push('scripts')
-    <script src="{{ asset('assets/js/admin/nav_onclick.js') }}"></script>
-@endpush --}}

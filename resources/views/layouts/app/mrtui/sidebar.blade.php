@@ -22,7 +22,3 @@
             alt="sidebar logo">
     </div>
 </section>
-
-{{-- @push('script')
-    <script src="{{ asset('assets-mrtui/js/sidebar.js') }}"></script>
-@endpush --}}

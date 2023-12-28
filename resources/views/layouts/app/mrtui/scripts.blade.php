@@ -25,5 +25,6 @@
 {{-- End Logout --}}
 
 <script src="{{ asset('assets-mrtui/js/sidebar.js') }}"></script>
+<script src="{{ asset('assets-mrtui/js/nav_onclick.js') }}"></script>
 
 @stack('script')
