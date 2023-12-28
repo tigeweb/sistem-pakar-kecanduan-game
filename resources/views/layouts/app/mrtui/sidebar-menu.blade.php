@@ -1,5 +1,14 @@
 <div class="menu">
-    {{-- <x-sidebar-menu.single-menu route="dashboard.index" title="Dashboard" icon="bi-grid" /> --}}
+    <x-sidebar-menu.single-menu route="dashboard.index" title="Dashboard" icon="bi-grid" />
+
+    {{-- Akses Superadmin & Admin --}}
+    @if (auth()->user()->can(\App\Permissions\Permission::CAN_ACCESS_SUPERADMIN) ||
+            auth()->user()->can(\App\Permissions\Permission::CAN_ACCESS_ADMIN))
+        @can(\App\Permissions\Permission::VIEW_CRUD)
+            <x-sidebar-menu.single-menu route="crud.index" title="CRUD" icon="bi-grid" />
+        @endcan
+    @endif
+    {{-- End Akses Superadmin & Admin --}}
 
     <form class="link-menu" method="POST" action="{{ route('logout') }}">
         @csrf

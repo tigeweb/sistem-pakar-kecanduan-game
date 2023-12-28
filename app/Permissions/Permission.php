@@ -28,6 +28,9 @@ class Permission
     public const EDIT_ROLES_PERMISSIONS = 'ubah_izin_akses';
     public const DELETE_ROLES_PERMISSIONS = 'hapus_izin_akses';
 
+    // Superadmin & Admin
+    public const VIEW_CRUD = 'tampilan_crud';
+
     // Untuk seeder semua permission
     public const PERMISSION_GROUPS = [
         self::PERMISSION_GROUPS_ACCESS_SUPERADMIN,
@@ -35,6 +38,7 @@ class Permission
         self::PERMISSION_GROUPS_MANAGE_USERS,
         self::PERMISSION_GROUPS_ROLES,
         self::PERMISSION_GROUPS_ROLES_PERMISSIONS,
+        self::PERMISSION_GROUPS_CRUD,
     ];
 
     // Untuk seeder role superadmin
@@ -43,11 +47,13 @@ class Permission
         self::PERMISSION_GROUPS_MANAGE_USERS,
         self::PERMISSION_GROUPS_ROLES,
         self::PERMISSION_GROUPS_ROLES_PERMISSIONS,
+        self::PERMISSION_GROUPS_CRUD,
     ];
 
     // Untuk seeder role admin
     public const PERMISSION_GROUPS_ADMIN = [
         self::PERMISSION_GROUPS_ACCESS_ADMIN,
+        self::PERMISSION_GROUPS_CRUD,
     ];
 
     // Superadmin
@@ -97,4 +103,12 @@ class Permission
         ]
     ];
     // End Admin
+
+    // Superadmin & Admin
+    public const PERMISSION_GROUPS_CRUD = [
+        'name' => 'crud',
+        'permissions' => [
+            self::VIEW_CRUD,
+        ]
+    ];
 }

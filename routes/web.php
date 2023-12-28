@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Superadmin\CRUD\CRUDController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,17 @@ Route::middleware(['auth', 'permission:akses_menu_superadmin|akses_menu_admin'])
     });
     // End Dashboard
 
+    // CRUD
+    Route::prefix('crud')->name('crud.')->group(function () {
+        Route::get('/', [CRUDController::class, 'index'])->name('index');
+    });
+    // End CRUD
+
 });
 // End Akses Superadmin & Admin
+
+// Akses Superadmin
+require __DIR__ . '/custom/superadmin.php';
+// End Akses Superadmin
 
 require __DIR__ . '/auth.php';
