@@ -1,4 +1,8 @@
-import { read } from "../../../components/ajax-functions.js";
+import {
+    read,
+    store,
+    edit_destroy,
+} from "../../../components/ajax-functions.js";
 
 $(document).ready(function () {
     const columns = [
@@ -32,7 +36,7 @@ $(document).ready(function () {
         },
         {
             targets: [1],
-            width: "220px",
+            width: "230px",
             className: "word-wrap",
         },
         {
@@ -48,4 +52,6 @@ $(document).ready(function () {
     ];
 
     read("table-crud", "/crud", columns, columnDefs);
+    store("table-crud");
+    edit_destroy("crud", "table-crud");
 });

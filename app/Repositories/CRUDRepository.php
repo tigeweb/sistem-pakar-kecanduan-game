@@ -19,4 +19,40 @@ class CRUDRepository
 
         return $data;
     }
+
+    public function findById($id)
+    {
+        $data = $this->crud->findOrFail($id);
+
+        return $data;
+    }
+
+    public function store($request)
+    {
+        $data = $this->crud->create([
+            'string' => $request->string,
+        ]);
+
+        return $data;
+    }
+
+    public function update($request, $id)
+    {
+        $data = $this->findById($id);
+
+        $data->update([
+            'string' => $request->string,
+        ]);
+
+        return $data;
+    }
+
+    public function destroy($id)
+    {
+        $data = $this->findById($id);
+
+        $data->delete();
+
+        return $data;
+    }
 }

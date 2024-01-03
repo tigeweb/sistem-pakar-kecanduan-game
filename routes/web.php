@@ -30,9 +30,8 @@ Route::middleware(['auth', 'permission:akses_menu_superadmin|akses_menu_admin'])
     // End Dashboard
 
     // CRUD
-    Route::prefix('crud')->name('crud.')->group(function () {
-        Route::get('/', [CRUDController::class, 'index'])->name('index');
-    });
+    Route::resource('crud', CRUDController::class);
+    Route::get('crud/{crud}/detail', [CRUDController::class, 'detail'])->name('crud.detail');
     // End CRUD
 
 });

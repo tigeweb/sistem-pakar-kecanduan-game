@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('setting', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->enum('tipe', get_value_enums(\App\Enums\SettingEnum::cases()));
             $table->longText('value');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('setting');
+        Schema::dropIfExists('settings');
     }
 };
