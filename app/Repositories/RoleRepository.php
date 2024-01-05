@@ -26,11 +26,10 @@ class RoleRepository
 
     public function store($request)
     {
-        $randomColors = generateRandomColors();
         $role = $this->role->create([
             'name' => $request['role'],
-            'color' => $randomColors['color'],
-            'background_color' => $randomColors['background_color'],
+            'color' => $request['color'],
+            'background_color' => convertHexToRgba($request['background_color']),
         ]);
 
         return $role;
@@ -41,7 +40,9 @@ class RoleRepository
         $role = $this->findById($id);
 
         $role->update([
-            'name' => $request['role']
+            'name' => $request['role'],
+            'color' => $request['color'],
+            'background_color' => convertHexToRgba($request['background_color']),
         ]);
 
         return $role;

@@ -23,6 +23,9 @@ class RolesController extends Controller
             $data = $this->roleRepository->getAll();
             return DataTables::of($data)
                 ->addIndexColumn()
+                ->addColumn('role', function ($data) {
+                    return view('pages.superadmin.roles.components-table.component-role', ['data' => $data]);
+                })
                 ->addColumn('aksi', function ($data) {
                     return view('pages.superadmin.roles.components-table.component-action', ['data' => $data]);
                 })

@@ -12,6 +12,10 @@
 {{-- End Favicon --}}
 
 {{-- Custom Styles --}}
+{{-- General --}}
+<link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
+{{-- End General --}}
+
 <link rel="stylesheet" href="{{ asset('assets-mrtui/css/custom.css') }}">
 {{-- End Custom Styles --}}
 

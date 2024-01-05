@@ -65,6 +65,45 @@ if (!function_exists('generateRandomColors')) {
     }
 }
 
+if (!function_exists('convertHexToRgba')) {
+    function convertHexToRgba($hex, $opacity = 0.25)
+    {
+        // Hapus karakter '#' dari nilai hex
+        $hex = str_replace('#', '', $hex);
+
+        // Pisahkan nilai hex menjadi komponen warna (R, G, B)
+        $r = hexdec(substr($hex, 0, 2));
+        $g = hexdec(substr($hex, 2, 2));
+        $b = hexdec(substr($hex, 4, 2));
+
+        // Kembalikan nilai RGBA dalam format string
+        return "rgba($r, $g, $b, $opacity)";
+    }
+}
+
+if (!function_exists('convertRgbaToHex')) {
+    function convertRgbaToHex($rgba)
+    {
+        // Pisahkan nilai RGBA menjadi komponen warna (R, G, B, A)
+        preg_match('/\((\d+), (\d+), (\d+), ([\d.]+)\)/', $rgba, $matches);
+
+        // Konversi komponen warna ke format hex
+        $r = dechex($matches[1]);
+        $g = dechex($matches[2]);
+        $b = dechex($matches[3]);
+
+        // Pastikan format hex selalu dua digit
+        $r = str_pad($r, 2, '0', STR_PAD_LEFT);
+        $g = str_pad($g, 2, '0', STR_PAD_LEFT);
+        $b = str_pad($b, 2, '0', STR_PAD_LEFT);
+
+        // Gabungkan nilai hex menjadi satu string
+        $hex = "#$r$g$b";
+
+        return $hex;
+    }
+}
+
 if (!function_exists('is_role_superadmin')) {
     function is_role_superadmin($role)
     {

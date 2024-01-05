@@ -113,6 +113,10 @@ class Permission
         'name' => 'crud',
         'permissions' => [
             self::VIEW_CRUD,
+            self::CREATE_CRUD,
+            self::EDIT_CRUD,
+            self::DETAIL_CRUD,
+            self::DELETE_CRUD,
         ]
     ];
 }

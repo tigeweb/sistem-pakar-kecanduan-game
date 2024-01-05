@@ -28,6 +28,16 @@ class RolesRequest extends FormRequest
                 'max:15',
                 'unique:roles,name,' . $this->route('role')
             ],
+            'color' => [
+                'required',
+                'string',
+                'max:7',
+            ],
+            'background_color' => [
+                'required',
+                'string',
+                'max:7',
+            ],
         ];
 
         return $rules;

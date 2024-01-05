@@ -12,8 +12,8 @@ $(document).ready(function () {
             searchable: false,
         },
         {
-            data: "name",
-            name: "name",
+            data: "role",
+            name: "role",
         },
         {
             data: "aksi",

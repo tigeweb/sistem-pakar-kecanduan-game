@@ -155,9 +155,7 @@ function store(
                         customError(errors);
                     } else {
                         $.each(errors, function (key, value) {
-                            $("#" + key)
-                                .parent("div")
-                                .addClass("is-invalid");
+                            $("#" + key).addClass("is-invalid");
                             $("label.error_" + key).text(value[0]);
                         });
                     }
