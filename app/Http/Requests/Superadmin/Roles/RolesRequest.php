@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Superadmin\CRUD;
+namespace App\Http\Requests\Superadmin\Roles;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CRUDStoreRequest extends FormRequest
+class RolesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -21,8 +21,15 @@ class CRUDStoreRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'string' => 'required|string|max:255',
+        $rules = [
+            'role' => [
+                'required',
+                'string',
+                'max:15',
+                'unique:roles,name,' . $this->route('role')
+            ],
         ];
+
+        return $rules;
     }
 }

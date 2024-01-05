@@ -30,6 +30,10 @@ class Permission
 
     // Superadmin & Admin
     public const VIEW_CRUD = 'tampilan_crud';
+    public const CREATE_CRUD = 'tambah_crud';
+    public const EDIT_CRUD = 'ubah_crud';
+    public const DETAIL_CRUD = 'detail_crud';
+    public const DELETE_CRUD = 'hapus_crud';
 
     // Untuk seeder semua permission
     public const PERMISSION_GROUPS = [

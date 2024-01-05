@@ -7,6 +7,9 @@ return [
         'crud_store' => 'Data CRUD berhasil disimpan',
         'crud_update' => 'Data CRUD berhasil diubah',
         'crud_destroy' => 'Data CRUD berhasil dihapus',
+        'roles_store' => 'Role berhasil disimpan',
+        'roles_update' => 'Role berhasil diubah',
+        'roles_destroy' => 'Role berhasil dihapus',
     ],
     'failed' => [
         'default' => 'Terjadi kesalahan sistem, silahkan hubungi admin',

@@ -1,16 +1,18 @@
 @extends('layouts.app.mrtui.app')
 @section('title')
     <h3>CRUD</h3>
-    <x-breadcrumb :items="[['text' => 'CRUD', 'link' => null]]" />
+    <x-breadcrumb :items="[['text' => 'Dashboard', 'link' => route('dashboard.index')], ['text' => 'CRUD', 'link' => null]]" />
 @endsection
 @section('contents')
     <section class="menu-section mt-4">
-        <div class="row mb-4">
-            <div class="col">
-                <x-buttons.btn-save value="Masukan Data CRUD" icon="true" data-bs-target="#modalActionStore"
-                    data-bs-toggle="modal" />
+        @can(\App\Permissions\Permission::CREATE_CRUD)
+            <div class="row mb-4">
+                <div class="col">
+                    <x-buttons.btn-save value="Masukan Data CRUD" icon="true" data-bs-target="#modalActionStore"
+                        data-bs-toggle="modal" />
+                </div>
             </div>
-        </div>
+        @endcan
         <x-table id="table-crud" :headers="['no', 'string', 'created at', 'aksi']" />
     </section>
 
@@ -22,7 +24,6 @@
     {{-- End Modal --}}
 @endsection
 
-<x-assets.sweetalert />
 <x-assets.datatable />
 <x-assets.select />
 

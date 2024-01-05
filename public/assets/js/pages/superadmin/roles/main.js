@@ -12,13 +12,8 @@ $(document).ready(function () {
             searchable: false,
         },
         {
-            data: "string",
-            name: "string",
-        },
-        {
-            data: "created_at",
-            name: "created_at",
-            searchable: false,
+            data: "name",
+            name: "name",
         },
         {
             data: "aksi",
@@ -36,22 +31,16 @@ $(document).ready(function () {
         },
         {
             targets: [1],
-            width: "230px",
             className: "word-wrap",
         },
         {
             targets: [2],
-            width: "120px",
-            className: "word-wrap text-center",
-        },
-        {
-            targets: [3],
             width: "13%",
             className: "text-center",
         },
     ];
 
-    read("table-crud", "/crud", columns, columnDefs);
-    store("table-crud");
-    edit_destroy("crud", "table-crud");
+    read("table-roles", "roles", columns, columnDefs);
+    store("table-roles");
+    edit_destroy("roles", "table-roles", "/superadmin");
 });
