@@ -30,8 +30,7 @@ Route::middleware(['auth', 'permission:akses_menu_superadmin|akses_menu_admin'])
     // End Dashboard
 
     // CRUD
-    Route::resource('crud', CRUDController::class);
-    Route::get('crud/{crud}/detail', [CRUDController::class, 'detail'])->name('crud.detail');
+    Route::resource('crud', CRUDController::class)->except(['create']);
     // End CRUD
 
 });

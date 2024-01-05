@@ -13,6 +13,7 @@
     'value' => '',
     'className' => '',
     'classNameGroup' => 'mb-3',
+    'disabled' => false,
 ])
 
 <div class="{{ $classNameGroup }}">
@@ -20,6 +21,7 @@
         <x-labels.input-label for="{{ $id }}" value="{{ $label }}" />
     @endif
     <input type="{{ $type }}" id="{{ $id }}" class="form-control {{ $className }}"
-        name="{{ $name }}" value="{{ $value }}" placeholder="{{ $placeholder }}" {{ $attributes }}>
+        name="{{ $name }}" value="{{ $value }}" placeholder="{{ $placeholder }}"
+        {{ $disabled ? 'disabled' : '' }} {{ $attributes }}>
     <x-errors.input-error name="{{ $name }}" />
 </div>

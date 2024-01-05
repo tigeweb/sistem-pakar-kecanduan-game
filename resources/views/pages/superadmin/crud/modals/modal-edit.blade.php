@@ -2,11 +2,6 @@
     id="formActionUpdate" btnId="saveBtnUpdate" btnSimpan="Simpan Perubahan">
     @method('PUT')
 
-    <div class="row">
-        <div class="col-md-4">
-            <x-forms.input-group label="string" id="string" name="string" value="{{ $data->string ?? '' }}"
-                placeholder="masukkan string..." />
-        </div>
-    </div>
+    @include('pages.superadmin.crud.components.form', ['data' => $data])
 
 </x-modals.modal-isi-store>

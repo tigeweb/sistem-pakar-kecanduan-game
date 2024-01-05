@@ -75,18 +75,7 @@ class CRUDController extends Controller
         }
     }
 
-    public function destroy($id)
-    {
-        try {
-            $this->crudRepository->destroy($id);
-
-            return response()->json(['message' => Config::get('messages.success.crud_destroy')]);
-        } catch (\Exception $e) {
-            return response()->json(['error' => $e->getMessage()], 500);
-        }
-    }
-
-    public function detail($id)
+    public function show($id)
     {
         try {
             $data = $this->crudRepository->findById($id);
@@ -94,6 +83,17 @@ class CRUDController extends Controller
             return view('pages.superadmin.crud.modals.modal-detail', [
                 'data' => $data,
             ]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $this->crudRepository->destroy($id);
+
+            return response()->json(['message' => Config::get('messages.success.crud_destroy')]);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }

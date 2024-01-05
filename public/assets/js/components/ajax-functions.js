@@ -189,8 +189,12 @@ function edit_destroy(
         let jenis = data.jenis;
 
         if (jenis == "edit" || jenis == "detail") {
+            let url = prefix + "/" + name + "/" + id;
+            if (jenis == "edit") {
+                url += "/edit";
+            }
             $.ajax({
-                url: prefix + "/" + name + "/" + id + "/" + jenis,
+                url: url,
                 type: "GET",
                 beforeSend: function () {
                     $("#" + modalId)
