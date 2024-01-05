@@ -29,9 +29,7 @@ class CRUDRepository
 
     public function store($request)
     {
-        $data = $this->crud->create([
-            'string' => $request->string,
-        ]);
+        $data = $this->crud->create($request);
 
         return $data;
     }
@@ -40,9 +38,7 @@ class CRUDRepository
     {
         $data = $this->findById($id);
 
-        $data->update([
-            'string' => $request->string,
-        ]);
+        $data->update($request);
 
         return $data;
     }

@@ -11,7 +11,6 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
-use Illuminate\Support\Facades\Config;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -34,7 +33,7 @@ class AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
         if ($user->hasPermissionTo(Permission::CAN_ACCESS_ADMIN) || $user->hasPermissionTo(Permission::CAN_ACCESS_SUPERADMIN)) {
-            return response()->json(['message' => Config::get('messages.success.login'), 'route' => route('dashboard.index')]);
+            return response()->json(['message' => __('app.success.login'), 'route' => route('dashboard.index')]);
         } else {
             Auth::guard('web')->logout();
             $request->session()->invalidate();
@@ -54,6 +53,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect(route('login'))->with('success', Config::get('messages.success.logout'));
+        return redirect(route('login'))->with('success', __('app.success.logout'));
     }
 }

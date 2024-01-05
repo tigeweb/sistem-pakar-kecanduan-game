@@ -9,7 +9,6 @@ use App\Permissions\Permission;
 use App\Repositories\CRUDRepository;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
-use Illuminate\Support\Facades\Config;
 
 class CRUDController extends Controller
 {
@@ -43,9 +42,9 @@ class CRUDController extends Controller
     public function store(CRUDRequest $request)
     {
         try {
-            $this->crudRepository->store($request);
+            $this->crudRepository->store($request->validated());
 
-            return response()->json(['message' => Config::get('messages.success.crud_store')]);
+            return response()->json(['message' => __('app.success.crud_store')]);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
@@ -67,9 +66,9 @@ class CRUDController extends Controller
     public function update(CRUDRequest $request, $id)
     {
         try {
-            $this->crudRepository->update($request, $id);
+            $this->crudRepository->update($request->validated(), $id);
 
-            return response()->json(['message' => Config::get('messages.success.crud_update')]);
+            return response()->json(['message' => __('app.success.crud_update')]);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
@@ -93,7 +92,7 @@ class CRUDController extends Controller
         try {
             $this->crudRepository->destroy($id);
 
-            return response()->json(['message' => Config::get('messages.success.crud_destroy')]);
+            return response()->json(['message' => __('app.success.crud_destroy')]);
         } catch (\Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);
         }
