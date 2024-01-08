@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Superadmin\Roles\RolesController;
+use App\Http\Controllers\Superadmin\RolePermissionsController;
+use App\Http\Controllers\Superadmin\RolesController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('superadmin')->name('superadmin.')->middleware(['auth', 'permission:akses_menu_superadmin'])->group(function () {
@@ -10,5 +11,11 @@ Route::prefix('superadmin')->name('superadmin.')->middleware(['auth', 'permissio
         'index' => 'kelola-pengguna.roles.index',
     ]);
     // End ROLES
+
+    // ROLE PERMISSIONS
+    Route::resource('role-permissions', RolePermissionsController::class)->except(['create', 'show'])->names([
+        'index' => 'kelola-pengguna.role-permissions.index',
+    ]);
+    // End ROLE PERMISSIONS
 
 });

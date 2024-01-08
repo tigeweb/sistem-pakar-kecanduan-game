@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Superadmin\CRUD;
+namespace App\Http\Controllers\Superadmin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Superadmin\CRUD\CRUDRequest;
-use App\Http\Requests\Superadmin\CRUD\CRUDStoreRequest;
+use App\Http\Requests\Superadmin\CRUDRequest;
 use App\Permissions\Permission;
 use App\Repositories\CRUDRepository;
 use Illuminate\Http\Request;

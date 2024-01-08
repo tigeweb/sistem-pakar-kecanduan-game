@@ -16,7 +16,7 @@ class RoleRepository
 
     public function getAll()
     {
-        return $this->role->latest()->get();
+        return $this->role->latest();
     }
 
     public function findById($id)
