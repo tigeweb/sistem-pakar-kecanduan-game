@@ -8,9 +8,6 @@
         <span></span>
         <span></span>
     </div>
-    <div class="ms-auto d-flex align-items-center">
-        @include('layouts.app.mrtui.navbar-item')
-    </div>
 </section>
 <div class="title-mobile" style="display: none">
     @yield('title')

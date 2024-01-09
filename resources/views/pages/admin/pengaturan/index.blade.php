@@ -13,6 +13,10 @@
                 <i class="bi bi-diamond-half"></i>
                 <h5>Edit Logo</h5>
             </a>
+            <a class="menu-pengaturan" href="{{ route('admin.pengaturan.edit-logo-title.index') }}">
+                <i class="bi bi-layout-text-sidebar"></i>
+                <h5>Edit Logo Title</h5>
+            </a>
             <a class="menu-pengaturan" href="{{ route('admin.pengaturan.edit-gambar-sidebar.index') }}">
                 <i class="bi bi-layout-sidebar-inset"></i>
                 <h5>Edit Gambar Sidebar</h5>

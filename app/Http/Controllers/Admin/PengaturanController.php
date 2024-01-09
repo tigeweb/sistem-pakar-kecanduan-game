@@ -19,6 +19,11 @@ class PengaturanController extends Controller
         return view('pages.admin.pengaturan.edit-logo.index');
     }
 
+    public function edit_logo_title()
+    {
+        return view('pages.admin.pengaturan.edit-logo-title.index');
+    }
+
     public function edit_gambar_sidebar()
     {
         return view('pages.admin.pengaturan.edit-gambar-sidebar.index');

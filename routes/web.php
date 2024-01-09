@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\JenisPerilakuController;
 use App\Http\Controllers\Admin\PengaturanController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,6 +44,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     Route::controller(PengaturanController::class)->name('pengaturan.')->group(function () {
         Route::get('pengaturan', 'index')->name('index');
         Route::get('pengaturan/edit-logo', 'edit_logo')->name('edit-logo.index');
+        Route::get('pengaturan/edit-logo-title', 'edit_logo_title')->name('edit-logo-title.index');
         Route::get('pengaturan/edit-gambar-sidebar', 'edit_gambar_sidebar')->name('edit-gambar-sidebar.index');
         Route::get('pengaturan/edit-footer', 'edit_footer')->name('edit-footer.index');
         Route::post('ajax/update-data-setting', 'update')->name('ajax.update');
@@ -53,7 +55,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
 // End Akses Admin
 
 // Diagnosa
-Route::resource('diagnosa', DiagnosaController::class);
+Route::resource('diagnosa', DiagnosaController::class)->only(['index', 'store']);
 // End Diagnosa
 
 require __DIR__ . '/auth.php';
