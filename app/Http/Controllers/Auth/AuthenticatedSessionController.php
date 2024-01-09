@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
-use App\Permissions\Permission;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -32,8 +31,8 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
         $user = Auth::user();
-        if ($user->hasPermissionTo(Permission::CAN_ACCESS_ADMIN) || $user->hasPermissionTo(Permission::CAN_ACCESS_SUPERADMIN)) {
-            return response()->json(['message' => __('app.success.login'), 'route' => route('dashboard.index')]);
+        if ($user->hasRole('Admin')) {
+            return response()->json(['message' => __('app.success.login'), 'route' => route('admin.dashboard.index')]);
         } else {
             Auth::guard('web')->logout();
             $request->session()->invalidate();

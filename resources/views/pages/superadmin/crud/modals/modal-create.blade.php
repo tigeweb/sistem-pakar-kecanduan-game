@@ -1,4 +1,4 @@
-<x-modals.modal-isi-store title="Tambah Data CRUD" routeName="{{ route('crud.store') }}">
+<x-modals.modal-isi-store title="Tambah Data CRUD" routeName="{{ route('admin.crud.store') }}">
 
     @include('pages.superadmin.crud.components.form')
 

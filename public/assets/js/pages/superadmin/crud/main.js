@@ -51,7 +51,7 @@ $(document).ready(function () {
         },
     ];
 
-    read("table-crud", "/crud", columns, columnDefs);
+    read("table-crud", "/admin/crud", columns, columnDefs);
     store("table-crud");
-    edit_destroy("crud", "table-crud");
+    edit_destroy("crud", "table-crud", "/admin");
 });

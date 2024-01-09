@@ -19,8 +19,8 @@ Route::get('/', function () {
     return redirect(route('login'));
 });
 
-// Akses Superadmin & Admin
-Route::middleware(['auth', 'permission:akses_menu_superadmin|akses_menu_admin'])->group(function () {
+// Akses Admin
+Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->group(function () {
 
     // Dashboard
     Route::controller(DashboardController::class)->name('dashboard.')->group(function () {
@@ -33,10 +33,6 @@ Route::middleware(['auth', 'permission:akses_menu_superadmin|akses_menu_admin'])
     // End CRUD
 
 });
-// End Akses Superadmin & Admin
-
-// Akses Superadmin
-require __DIR__ . '/custom/superadmin.php';
-// End Akses Superadmin
+// End Akses Admin
 
 require __DIR__ . '/auth.php';
