@@ -23,4 +23,4 @@
 @stack('head')
 
 <!-- Scripts -->
-@vite([])
+{{-- @vite([]) --}}

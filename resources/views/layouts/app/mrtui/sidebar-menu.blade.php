@@ -13,26 +13,6 @@
 
     {{-- Akses Superadmin --}}
 
-    {{-- Kelola Pengguna --}}
-    @can(\App\Permissions\Permission::CAN_ACCESS_SUPERADMIN)
-        @if (auth()->user()->can(\App\Permissions\Permission::VIEW_ROLES))
-            @php
-                $dropdownMenu = [];
-            @endphp
-            @can(\App\Permissions\Permission::VIEW_ROLES)
-                @php
-                    $dropdownMenu[] = [
-                        'route' => 'superadmin.kelola-pengguna.roles.index',
-                        'title' => 'Role',
-                    ];
-                @endphp
-            @endcan
-            <x-sidebar-menu.dropdown-menu mainRoute="superadmin.kelola-pengguna" mainTitle="Kelola Pengguna" :dropdownMenu="$dropdownMenu"
-                icon="bi-people" />
-        @endif
-    @endcan
-    {{-- End Kelola Pengguna --}}
-
     {{-- End Akses Superadmin --}}
 
     <form class="link-menu" method="POST" action="{{ route('logout') }}">
