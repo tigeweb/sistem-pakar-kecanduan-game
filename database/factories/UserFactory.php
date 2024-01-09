@@ -29,7 +29,6 @@ class UserFactory extends Factory
             'name' => $name,
             'username' => $name,
             'password' => Hash::make('2'),
-            'no_hp' => '0812' . $this->faker->unique()->numerify('######'),
             'created_at' => now(),
             'updated_at' => now(),
         ];

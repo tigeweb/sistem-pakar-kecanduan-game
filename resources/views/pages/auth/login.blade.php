@@ -1,6 +1,5 @@
 @extends('layouts.auth.mrtui.app')
 @section('contents')
-    @include('pages.auth.teknisi')
     @include('pages.auth.admin')
 @endsection
 
@@ -13,7 +12,6 @@
     <script>
         $(document).ready(function() {
             loginSubmit('loginSubmit_admin', 'admin');
-            loginSubmit('loginSubmit_teknisi', 'teknisi');
 
             @if (Session::has('success'))
                 showSwal("mixin", "{{ Session::get('success') }}", "success");

@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
         $admin = User::factory()->create([
             'name' => 'Admin',
             'username' => 'admin',
+            'password' => Hash::make('password123'),
         ]);
         $admin->assignRole('Admin');
 

@@ -16,11 +16,6 @@ return new class extends Migration
             $table->string('name', 50);
             $table->string('username', 15)->unique();
             $table->text('password');
-            $table->enum('jenis_kelamin', array_keys(\App\Enums\JenisKelaminEnum::toAssocArray()))->nullable();
-            $table->string('no_hp', 15)->unique()->nullable();
-            $table->string('alamat', 100)->nullable();
-            $table->string('tempat_lahir', 100)->nullable();
-            $table->date('tanggal_lahir')->nullable();
             $table->timestamps();
         });
     }
