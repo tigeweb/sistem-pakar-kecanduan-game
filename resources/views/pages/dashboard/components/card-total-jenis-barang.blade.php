@@ -3,8 +3,8 @@
         <i class="bi bi-box-seam"></i>
     </div>
     <div class="card-data">
-        <p>Semua Barang</p>
-        <h5>{{ $semua_barang_count }}</h5>
+        <p>Jenis Perilaku</p>
+        <h5>{{ $jenis_perilaku_count }}</h5>
     </div>
 </div>
 <div class="card bg-stand-by">
@@ -12,10 +12,11 @@
         <i class="bi bi-box-seam"></i>
     </div>
     <div class="card-data">
-        <p>Semua Barang Stand By</p>
-        <h5>{{ $semua_barang_stand_by_count }}</h5>
+        <p>Gejala</p>
+        <h5>{{ $gejala_count }}</h5>
     </div>
 </div>
+
 <div class="card bg-limbah">
     <div class="card-icon">
         <i class="bi bi-box-seam"></i>
