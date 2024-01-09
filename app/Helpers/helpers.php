@@ -1,10 +1,6 @@
 <?php
 
-use App\Enums\SettingEnum;
 use App\Models\Superadmin\Setting;
-use App\Permissions\Permission;
-use App\Repositories\RolePermissionsRepository;
-use App\Repositories\RoleRepository;
 use Carbon\Carbon;
 
 if (!function_exists('get_setting')) {
@@ -103,34 +99,6 @@ if (!function_exists('convertRgbaToHex')) {
         $hex = "#$r$g$b";
 
         return $hex;
-    }
-}
-
-if (!function_exists('is_role_superadmin')) {
-    function is_role_superadmin($role)
-    {
-        return $role === Permission::ROLE_SUPERADMIN;
-    }
-}
-
-if (!function_exists('get_data_role_without_superadmin')) {
-    function get_data_role_without_superadmin()
-    {
-        $roleRepository = app(\App\Repositories\RoleRepository::class);
-        $data = $roleRepository->getRoleWithoutSuperadmin();
-
-        return $data;
-    }
-}
-
-
-if (!function_exists('get_data_permissions')) {
-    function get_data_permissions()
-    {
-        $rolePermissionsRepository = app(\App\Repositories\RolePermissionsRepository::class);
-        $data = $rolePermissionsRepository->getDataPermissionWhereAccess();
-
-        return $data;
     }
 }
 

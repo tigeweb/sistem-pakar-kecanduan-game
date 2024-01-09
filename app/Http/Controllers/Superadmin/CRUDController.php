@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Superadmin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Superadmin\CRUDRequest;
-use App\Permissions\Permission;
 use App\Repositories\CRUDRepository;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -20,8 +19,6 @@ class CRUDController extends Controller
 
     public function index(Request $request)
     {
-        $this->authorize(Permission::VIEW_CRUD);
-
         if ($request->ajax()) {
             $data = $this->crudRepository->getAll();
             return DataTables::of($data)
