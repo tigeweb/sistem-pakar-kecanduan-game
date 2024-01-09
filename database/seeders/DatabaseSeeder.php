@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             SettingSeeder::class,
             CRUDSeeder::class,
+            JenisPerilakuSeeder::class,
+            GejalaSeeder::class,
         ]);
     }
 }
