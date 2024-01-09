@@ -1,6 +1,6 @@
 <section id="sidebar" class="shadow-sm">
     <div class="logo">
-        <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO_MRT->value) }}" id="logo-sidebar" alt="logo perusahaan">
+        <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO->value) }}" id="logo-sidebar" alt="logo perusahaan">
         <h5 class="logo-title">{{ get_setting(\App\Enums\SettingEnum::LOGO_TITLE->value) }}</h5>
         <div class="logo-mobile">
             <span>M</span>

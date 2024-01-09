@@ -9,6 +9,8 @@
 
     <x-sidebar-menu.single-menu route="diagnosa.index" title="Diagnosa" icon="bi-clipboard-check" />
 
+    <x-sidebar-menu.single-menu route="admin.pengaturan.index" title="Pengaturan" icon="bi bi-gear" />
+
     <form class="link-menu" method="POST" action="{{ route('logout') }}">
         @csrf
         <a href="#!" onclick="event.preventDefault(); confirmLogout(this);" class="link-item">

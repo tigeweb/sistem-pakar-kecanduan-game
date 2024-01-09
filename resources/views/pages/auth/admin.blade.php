@@ -2,7 +2,7 @@
     <img src="{{ asset('assets-mrtui/images/bg_login.png') }}" class="bg" alt="">
     <div class="card-login">
         <div class="card-logo">
-            <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO_MRT->value) }}" alt="">
+            <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO->value) }}" alt="">
             <h5>{{ get_setting(\App\Enums\SettingEnum::LOGO_TITLE->value) }}</h5>
         </div>
         <div class="card-title">

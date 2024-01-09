@@ -1,6 +1,6 @@
 <section id="teknisi_login">
     <div class="top-area">
-        <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO_MRT->value) }}" loading="eager" alt="">
+        <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO->value) }}" loading="eager" alt="">
         <h5>{{ get_setting(\App\Enums\SettingEnum::LOGO_TITLE->value) }}</h5>
     </div>
     <img src="{{ asset('assets-mrtui/images/bg_login.png') }}" loading="eager" alt="" class="login-bg">

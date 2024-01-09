@@ -4,7 +4,7 @@ namespace App\Enums;
 
 enum SettingEnum: string
 {
-    case LOGO_MRT = 'Logo MRT';
+    case LOGO = 'Logo';
     case LOGO_TITLE = 'Logo Title';
     case GAMBAR_SIDEBAR = 'Gambar Sidebar';
     case LISENSI = 'Lisensi';

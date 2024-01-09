@@ -12,7 +12,7 @@
             </div>
         </div>
         <section class="card-content row" id="card-total">
-            @include('pages.dashboard.components.card-total-jenis-barang', [
+            @include('pages.dashboard.components.card-total', [
                 'jenis_perilaku_count' => $jenis_perilaku_count,
                 'gejala_count' => $gejala_count,
                 'semua_barang_limbah_count' => 0,

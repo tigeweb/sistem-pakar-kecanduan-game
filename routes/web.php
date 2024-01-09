@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\GejalaController;
 use App\Http\Controllers\Admin\JenisPerilakuController;
+use App\Http\Controllers\Admin\PengaturanController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\DiagnosaController;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,16 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     // Gejala
     Route::resource('gejala', GejalaController::class)->except(['create', 'show']);
     // End Gejala
+
+    // Pengaturan
+    Route::controller(PengaturanController::class)->name('pengaturan.')->group(function () {
+        Route::get('pengaturan', 'index')->name('index');
+        Route::get('pengaturan/edit-logo', 'edit_logo')->name('edit-logo.index');
+        Route::get('pengaturan/edit-gambar-sidebar', 'edit_gambar_sidebar')->name('edit-gambar-sidebar.index');
+        Route::get('pengaturan/edit-footer', 'edit_footer')->name('edit-footer.index');
+        Route::post('ajax/update-data-setting', 'update')->name('ajax.update');
+    });
+    // End Pengaturan
 
 });
 // End Akses Admin

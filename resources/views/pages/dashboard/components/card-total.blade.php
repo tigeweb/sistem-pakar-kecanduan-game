@@ -1,6 +1,6 @@
 <div class="card bg-main">
     <div class="card-icon">
-        <i class="bi bi-box-seam"></i>
+        <i class="bi bi-question-square"></i>
     </div>
     <div class="card-data">
         <p>Jenis Perilaku</p>
@@ -9,7 +9,7 @@
 </div>
 <div class="card bg-stand-by">
     <div class="card-icon">
-        <i class="bi bi-box-seam"></i>
+        <i class="bi bi-activity"></i>
     </div>
     <div class="card-data">
         <p>Gejala</p>
