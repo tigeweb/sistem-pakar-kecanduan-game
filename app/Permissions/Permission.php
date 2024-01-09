@@ -13,20 +13,20 @@ class Permission
 
 
     // Superadmin
-    public const VIEW_MANAGE_USERS = 'tampilan_manage_users';
-    public const CREATE_MANAGE_USERS = 'tambah_manage_users';
-    public const EDIT_MANAGE_USERS = 'ubah_manage_users';
-    public const DELETE_MANAGE_USERS = 'hapus_manage_users';
+    public const VIEW_MANAGE_USERS = 'tampilan_manajemen_pengguna';
+    public const CREATE_MANAGE_USERS = 'tambah_manajemen_pengguna';
+    public const EDIT_MANAGE_USERS = 'ubah_manajemen_pengguna';
+    public const DELETE_MANAGE_USERS = 'hapus_manajemen_pengguna';
 
     public const VIEW_ROLES = 'tampilan_roles';
     public const CREATE_ROLES = 'tambah_roles';
     public const EDIT_ROLES = 'ubah_roles';
     public const DELETE_ROLES = 'hapus_roles';
 
-    public const VIEW_ROLES_PERMISSIONS = 'tampilan_izin_akses';
-    public const CREATE_ROLES_PERMISSIONS = 'tambah_izin_akses';
-    public const EDIT_ROLES_PERMISSIONS = 'ubah_izin_akses';
-    public const DELETE_ROLES_PERMISSIONS = 'hapus_izin_akses';
+    public const VIEW_ROLE_PERMISSIONS = 'tampilan_izin_akses';
+    public const CREATE_ROLE_PERMISSIONS = 'tambah_izin_akses';
+    public const EDIT_ROLE_PERMISSIONS = 'ubah_izin_akses';
+    public const DELETE_ROLE_PERMISSIONS = 'hapus_izin_akses';
 
     // Superadmin & Admin
     public const VIEW_CRUD = 'tampilan_crud';
@@ -41,22 +41,20 @@ class Permission
         self::PERMISSION_GROUPS_ACCESS_ADMIN,
         self::PERMISSION_GROUPS_MANAGE_USERS,
         self::PERMISSION_GROUPS_ROLES,
-        self::PERMISSION_GROUPS_ROLES_PERMISSIONS,
+        self::PERMISSION_GROUPS_ROLE_PERMISSIONS,
         self::PERMISSION_GROUPS_CRUD,
     ];
 
     // Untuk seeder role superadmin
     public const PERMISSION_GROUPS_SUPERADMIN = [
-        self::PERMISSION_GROUPS_ACCESS_SUPERADMIN,
         self::PERMISSION_GROUPS_MANAGE_USERS,
         self::PERMISSION_GROUPS_ROLES,
-        self::PERMISSION_GROUPS_ROLES_PERMISSIONS,
+        self::PERMISSION_GROUPS_ROLE_PERMISSIONS,
         self::PERMISSION_GROUPS_CRUD,
     ];
 
     // Untuk seeder role admin
     public const PERMISSION_GROUPS_ADMIN = [
-        self::PERMISSION_GROUPS_ACCESS_ADMIN,
         self::PERMISSION_GROUPS_CRUD,
     ];
 
@@ -69,7 +67,7 @@ class Permission
     ];
 
     public const PERMISSION_GROUPS_MANAGE_USERS = [
-        'name' => 'manage_users',
+        'name' => 'manajemen_pengguna',
         'permissions' => [
             self::VIEW_MANAGE_USERS,
             self::CREATE_MANAGE_USERS,
@@ -88,13 +86,13 @@ class Permission
         ]
     ];
 
-    public const PERMISSION_GROUPS_ROLES_PERMISSIONS = [
-        'name' => 'roles_permissions',
+    public const PERMISSION_GROUPS_ROLE_PERMISSIONS = [
+        'name' => 'izin_akses',
         'permissions' => [
-            self::VIEW_ROLES_PERMISSIONS,
-            self::CREATE_ROLES_PERMISSIONS,
-            self::EDIT_ROLES_PERMISSIONS,
-            self::DELETE_ROLES_PERMISSIONS,
+            self::VIEW_ROLE_PERMISSIONS,
+            self::CREATE_ROLE_PERMISSIONS,
+            self::EDIT_ROLE_PERMISSIONS,
+            self::DELETE_ROLE_PERMISSIONS,
         ]
     ];
     // End Superadmin

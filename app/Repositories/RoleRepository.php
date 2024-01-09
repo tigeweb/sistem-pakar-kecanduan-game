@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Permissions\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleRepository
@@ -16,7 +17,12 @@ class RoleRepository
 
     public function getAll()
     {
-        return $this->role->latest()->get();
+        return $this->role->latest();
+    }
+
+    public function getRoleWithoutSuperadmin()
+    {
+        return $this->role->whereNotIn('name', [Permission::ROLE_SUPERADMIN])->latest()->get();
     }
 
     public function findById($id)

@@ -10,6 +10,9 @@ return [
         'roles_store' => 'Role berhasil disimpan',
         'roles_update' => 'Role berhasil diubah',
         'roles_destroy' => 'Role berhasil dihapus',
+        'role_permissions_store' => 'Izin akses berhasil disimpan',
+        'role_permissions_update' => 'Izin akses berhasil diubah',
+        'role_permissions_destroy' => 'Izin akses berhasil dihapus',
     ],
     'failed' => [
         'default' => 'Terjadi kesalahan sistem, silahkan hubungi admin',

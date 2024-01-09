@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Superadmin\Roles;
+namespace App\Http\Controllers\Superadmin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Superadmin\Roles\RolesRequest;
+use App\Http\Requests\Superadmin\RolesRequest;
 use App\Repositories\RoleRepository;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
@@ -23,6 +23,9 @@ class RolesController extends Controller
             $data = $this->roleRepository->getAll();
             return DataTables::of($data)
                 ->addIndexColumn()
+                ->addColumn('DT_RowIndex', function ($data) {
+                    return $data->id;
+                })
                 ->addColumn('role', function ($data) {
                     return view('pages.superadmin.roles.components-table.component-role', ['data' => $data]);
                 })

@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Superadmin\CRUD\CRUDController;
+use App\Http\Controllers\Superadmin\CRUDController;
 use Illuminate\Support\Facades\Route;
 
 /*
