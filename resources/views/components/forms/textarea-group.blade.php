@@ -11,6 +11,7 @@
     'value' => '',
     'cols' => 5,
     'rows' => 3,
+    'disabled' => false,
 ])
 
 <div class="mb-3">
@@ -18,6 +19,7 @@
         <x-labels.input-label for="{{ $id }}" value="{{ $label }}" />
     @endif
     <textarea class="form-control {{ $className }}" name="{{ $name }}" id="{{ $id }}"
-        cols="{{ $cols }}" rows="{{ $rows }}" placeholder="{{ $placeholder }}" {{ $attributes }}>{{ $value ?? '' }}</textarea>
+        cols="{{ $cols }}" rows="{{ $rows }}" placeholder="{{ $placeholder }}"
+        {{ $disabled ? 'disabled' : '' }} {{ $attributes }}>{{ $value ?? '' }}</textarea>
     <x-errors.input-error name="{{ $name }}" />
 </div>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\GejalaController;
 use App\Http\Controllers\Admin\JenisPerilakuController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Superadmin\CRUDController;
@@ -34,8 +35,12 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     // End CRUD
 
     // Jenis Perilaku
-    Route::resource('jenis-perilaku', JenisPerilakuController::class)->except(['create']);
+    Route::resource('jenis-perilaku', JenisPerilakuController::class)->except(['create', 'show']);
     // End Jenis Perilaku
+
+    // Gejala
+    Route::resource('gejala', GejalaController::class)->except(['create', 'show']);
+    // End Gejala
 
 });
 // End Akses Admin

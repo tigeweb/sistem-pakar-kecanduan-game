@@ -5,6 +5,7 @@
     {{-- Akses Admin --}}
     <x-sidebar-menu.single-menu route="admin.crud.index" title="CRUD" icon="bi-grid" />
     <x-sidebar-menu.single-menu route="admin.jenis-perilaku.index" title="Jenis Perilaku" icon="bi-grid" />
+    <x-sidebar-menu.single-menu route="admin.gejala.index" title="Gejala" icon="bi-grid" />
     {{-- End Akses Admin --}}
 
     <form class="link-menu" method="POST" action="{{ route('logout') }}">

@@ -78,7 +78,7 @@ $(function () {
                             );
                             $("#" + tableId)
                                 .DataTable()
-                                .ajax.reload();
+                                .ajax.reload(null, false);
                         },
                         error: function (res) {
                             if (res.status === 500) {
@@ -162,7 +162,7 @@ $(function () {
                                         );
                                         $("#" + tableId)
                                             .DataTable()
-                                            .ajax.reload();
+                                            .ajax.reload(null, false);
                                     },
                                     error: function (res) {
                                         if (res.status === 500) {

@@ -36,7 +36,7 @@ $(document).ready(function () {
         {
             targets: [1],
             width: "100px",
-            className: "word-wrap",
+            className: "word-wrap text-center",
         },
         {
             targets: [2],

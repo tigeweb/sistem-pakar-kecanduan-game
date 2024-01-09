@@ -142,7 +142,7 @@ function store(
                 form[0].reset();
                 $("#" + tableId)
                     .DataTable()
-                    .ajax.reload();
+                    .ajax.reload(null, false);
             },
             error: function (res) {
                 if (res.status === 500) {
@@ -255,7 +255,7 @@ function edit_destroy(
                                 );
                                 $("#" + tableId)
                                     .DataTable()
-                                    .ajax.reload();
+                                    .ajax.reload(null, false);
                             },
                             error: function (res) {
                                 if (res.status === 500) {
