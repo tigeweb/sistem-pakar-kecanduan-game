@@ -3,7 +3,6 @@
 use App\Http\Controllers\Admin\GejalaController;
 use App\Http\Controllers\Admin\JenisPerilakuController;
 use App\Http\Controllers\Dashboard\DashboardController;
-use App\Http\Controllers\Superadmin\CRUDController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,10 +28,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
         Route::get('dashboard', 'index')->name('index');
     });
     // End Dashboard
-
-    // CRUD
-    Route::resource('crud', CRUDController::class)->except(['create']);
-    // End CRUD
 
     // Jenis Perilaku
     Route::resource('jenis-perilaku', JenisPerilakuController::class)->except(['create', 'show']);
