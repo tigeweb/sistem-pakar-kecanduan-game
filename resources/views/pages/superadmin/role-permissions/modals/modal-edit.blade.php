@@ -1,7 +1,11 @@
-<x-modals.modal-isi-update title="Edit Izin Role"
-    routeNameUpdate="{{ route('superadmin.ajax.role-permissions.update', ['role_permission' => $data_role->id]) }}">
+<x-modals.modal-isi-store title="Edit Izin Role"
+    routeName="{{ route('superadmin.role-permissions.update', ['role_permission' => $data_role->id]) }}"
+    id="formActionUpdate" btnId="saveBtnUpdate" btnSimpan="Simpan Perubahan">
+    @method('PUT')
 
-    <div class="row">
+    @include('pages.superadmin.role-permissions.components.form')
+
+    {{-- <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4">
             <x-forms.select-group className="form-select-update" label="role" id="role" name="role"
@@ -16,11 +20,11 @@
 
     <div id="izin-akses">
 
-    </div>
+    </div> --}}
 
-</x-modals.modal-isi-update>
+</x-modals.modal-isi-store>
 
-<script>
+{{-- <script>
     $(document).ready(function() {
         $(".form-select-update").select2({
             dropdownParent: $('#modalAction'),
@@ -47,4 +51,4 @@
             });
         }).trigger('select2:select');
     });
-</script>
+</script> --}}

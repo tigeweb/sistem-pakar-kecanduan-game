@@ -40,7 +40,7 @@
         </div>
     @endforeach
 
-    @if ($groupedPermissionsDashboard)
+    {{-- @if ($groupedPermissionsDashboard)
         @php
             $label = str_replace('_', ' ', $groupedPermissionsDashboard['name']);
         @endphp
@@ -66,7 +66,7 @@
                 </div>
             @endforeach
         </div>
-    @endif
+    @endif --}}
 
 
 

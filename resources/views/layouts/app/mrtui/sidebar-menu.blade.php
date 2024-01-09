@@ -15,7 +15,8 @@
 
     {{-- Kelola Pengguna --}}
     @can(\App\Permissions\Permission::CAN_ACCESS_SUPERADMIN)
-        @if (auth()->user()->can(\App\Permissions\Permission::VIEW_ROLES))
+        @if (auth()->user()->can(\App\Permissions\Permission::VIEW_ROLES) ||
+                auth()->user()->can(\App\Permissions\Permission::VIEW_ROLE_PERMISSIONS))
             @php
                 $dropdownMenu = [];
             @endphp
@@ -24,6 +25,14 @@
                     $dropdownMenu[] = [
                         'route' => 'superadmin.kelola-pengguna.roles.index',
                         'title' => 'Role',
+                    ];
+                @endphp
+            @endcan
+            @can(\App\Permissions\Permission::VIEW_ROLE_PERMISSIONS)
+                @php
+                    $dropdownMenu[] = [
+                        'route' => 'superadmin.kelola-pengguna.role-permissions.index',
+                        'title' => 'Izin Akses',
                     ];
                 @endphp
             @endcan

@@ -16,6 +16,7 @@ Route::prefix('superadmin')->name('superadmin.')->middleware(['auth', 'permissio
     Route::resource('role-permissions', RolePermissionsController::class)->except(['create', 'show'])->names([
         'index' => 'kelola-pengguna.role-permissions.index',
     ]);
+    Route::post('role-permissions/group-access', [RolePermissionsController::class, 'groupAccess'])->name('role-permissions.group-access');
     // End ROLE PERMISSIONS
 
 });

@@ -3,6 +3,8 @@
 use App\Enums\SettingEnum;
 use App\Models\Superadmin\Setting;
 use App\Permissions\Permission;
+use App\Repositories\RolePermissionsRepository;
+use App\Repositories\RoleRepository;
 use Carbon\Carbon;
 
 if (!function_exists('get_setting')) {
@@ -108,5 +110,52 @@ if (!function_exists('is_role_superadmin')) {
     function is_role_superadmin($role)
     {
         return $role === Permission::ROLE_SUPERADMIN;
+    }
+}
+
+if (!function_exists('get_data_role_without_superadmin')) {
+    function get_data_role_without_superadmin()
+    {
+        $roleRepository = app(\App\Repositories\RoleRepository::class);
+        $data = $roleRepository->getRoleWithoutSuperadmin();
+
+        return $data;
+    }
+}
+
+
+if (!function_exists('get_data_permissions')) {
+    function get_data_permissions()
+    {
+        $rolePermissionsRepository = app(\App\Repositories\RolePermissionsRepository::class);
+        $data = $rolePermissionsRepository->getDataPermissionWhereAccess();
+
+        return $data;
+    }
+}
+
+if (!function_exists('get_select_data_custom_column')) {
+    function get_select_data_custom_column($data, $columnName)
+    {
+        $values = [];
+
+        foreach ($data as $value) {
+            $values[$value->id] = $value->{$columnName};
+        }
+
+        return $values;
+    }
+}
+
+if (!function_exists('get_select_custom')) {
+    function get_select_custom($data, $columnName, $valueName)
+    {
+        $values = [];
+
+        foreach ($data as $value) {
+            $values[$value->{$valueName}] = $value->{$columnName};
+        }
+
+        return $values;
     }
 }

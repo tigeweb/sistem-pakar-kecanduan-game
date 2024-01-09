@@ -1,6 +1,8 @@
-<x-modals.modal-isi-store title="Tambah Izin Role" routeNameStore="{{ route('superadmin.ajax.role-permissions.store') }}">
+<x-modals.modal-isi-store title="Tambah Izin Role" routeName="{{ route('superadmin.role-permissions.store') }}">
 
-    <div class="row">
+    @include('pages.superadmin.role-permissions.components.form')
+
+    {{-- <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-4">
             <x-forms.select-group className="form-select-store" label="role" id="role_store" name="role_store"
@@ -15,33 +17,33 @@
 
     <div id="izin-akses-store">
 
-    </div>
+    </div> --}}
 
 </x-modals.modal-isi-store>
 
-@push('scripts')
+@push('script')
     <script>
         $(document).ready(function() {
-            $(".form-select-store").select2({
+            $(".form-select").select2({
                 dropdownParent: $('#modalActionStore'),
                 minimumResultsForSearch: Infinity,
             });
 
-            $("#akses_menu_store").on('select2:select', function(e) {
+            $("#akses_menu").on('select2:select', function(e) {
                 $.ajax({
-                    url: "{{ route('superadmin.ajax.role-permissions.group-access') }}",
+                    url: "{{ route('superadmin.role-permissions.group-access') }}",
                     type: "POST",
                     data: {
                         akses_menu: $(this).val(),
-                        role_id: "",
+                        role_id: $('#role').val(),
                     },
                     beforeSend: function() {
-                        $("#izin-akses-store").html(
+                        $("#izin-akses").html(
                             `<div class="d-flex justify-content-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>`
                         );
                     },
                     success: function(res) {
-                        $("#izin-akses-store").html(res);
+                        $("#izin-akses").html(res);
 
                     },
                 });
