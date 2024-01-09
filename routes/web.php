@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\GejalaController;
 use App\Http\Controllers\Admin\JenisPerilakuController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\DiagnosaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,5 +40,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
 
 });
 // End Akses Admin
+
+// Diagnosa
+Route::resource('diagnosa', DiagnosaController::class);
+// End Diagnosa
 
 require __DIR__ . '/auth.php';
