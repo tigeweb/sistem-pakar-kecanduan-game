@@ -16,7 +16,9 @@
 
 <body>
     <section id="admin">
-        @include('layouts.app.mrtui.sidebar')
+        @role('Admin')
+            @include('layouts.app.mrtui.sidebar')
+        @endrole
         <section id="main-admin">
             @include('layouts.app.mrtui.navbar')
             @yield('contents')
