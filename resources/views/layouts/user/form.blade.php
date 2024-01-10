@@ -10,6 +10,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('assets/css/user-form.css') }}">
     <link rel="shortcut icon" href="{{ get_setting(\App\Enums\SettingEnum::LOGO->value) }}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <title>{{ get_setting(\App\Enums\SettingEnum::LOGO_TITLE->value) }}</title>
 </head>
@@ -26,6 +27,9 @@
             </div>
         </div>
     </div>
+    <div class="login fs-4 text-white" id="to-login">
+        <i class="bi bi-grid-fill"></i>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
@@ -40,6 +44,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+        $('#to-login').on('click', () => window.location.href = "{{ route('admin.jenis-perilaku.index') }}")
     </script>
     @stack('scripts')
 </body>

@@ -104,3 +104,18 @@ div.error {
 #isiLagi {
     background-color: #415bdb;
 }
+.login {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #417adb;
+    padding: 0.5rem 0.8rem;
+    border: none;
+    cursor: pointer;
+}

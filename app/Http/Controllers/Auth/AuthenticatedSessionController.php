@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
         if ($user->hasRole('Admin')) {
-            return response()->json(['message' => __('app.success.login'), 'route' => route('diagnosa.index')]);
+            return response()->json(['message' => __('app.success.login'), 'route' => route('admin.jenis-perilaku.index')]);
         } else {
             Auth::guard('web')->logout();
             $request->session()->invalidate();
