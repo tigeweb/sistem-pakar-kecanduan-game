@@ -45,7 +45,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
         Route::get('pengaturan', 'index')->name('index');
         Route::get('pengaturan/edit-logo', 'edit_logo')->name('edit-logo.index');
         Route::get('pengaturan/edit-logo-title', 'edit_logo_title')->name('edit-logo-title.index');
-        Route::get('pengaturan/edit-gambar-sidebar', 'edit_gambar_sidebar')->name('edit-gambar-sidebar.index');
         Route::get('pengaturan/edit-footer', 'edit_footer')->name('edit-footer.index');
         Route::post('ajax/update-data-setting', 'update')->name('ajax.update');
     });

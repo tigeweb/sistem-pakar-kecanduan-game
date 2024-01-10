@@ -17,8 +17,4 @@
         </div>
     </div>
     @include('layouts.app.mrtui.sidebar-menu')
-    <div class="foto">
-        <img src="{{ get_setting(\App\Enums\SettingEnum::GAMBAR_SIDEBAR->value) }}" id="img-sidebar" draggable="false"
-            alt="sidebar logo">
-    </div>
 </section>
