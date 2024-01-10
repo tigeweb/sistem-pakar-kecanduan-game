@@ -3,9 +3,7 @@
 use App\Http\Controllers\Admin\GejalaController;
 use App\Http\Controllers\Admin\JenisPerilakuController;
 use App\Http\Controllers\Admin\PengaturanController;
-use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\DiagnosaController;
-use App\Http\Controllers\ProfilController;
 use Illuminate\Support\Facades\Route;
 
 /*
