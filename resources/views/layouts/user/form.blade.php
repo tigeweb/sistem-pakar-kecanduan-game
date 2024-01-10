@@ -27,9 +27,11 @@
             </div>
         </div>
     </div>
-    <div class="login fs-4 text-white" id="to-login">
-        <i class="bi bi-grid-fill"></i>
-    </div>
+    @role('Admin')
+        <div class="login fs-4 text-white" id="to-login">
+            <i class="bi bi-grid-fill"></i>
+        </div>
+    @endrole
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>

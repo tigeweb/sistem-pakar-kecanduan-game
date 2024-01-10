@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-        {{ env('APP_NAME') }}
+        {{ get_setting(\App\Enums\SettingEnum::LOGO_TITLE->value) }}
     </title>
 
     {{-- Bootstrap --}}
