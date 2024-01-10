@@ -14,7 +14,7 @@
                     data-bs-toggle="modal" />
             </div>
         </div>
-        <x-table id="table-jenis-perilaku" :headers="['no', 'kode jenis', 'jenis perilaku kecanduan game', 'aksi']" />
+        <x-table id="table-jenis-perilaku" :headers="['no', 'kode jenis', 'jenis perilaku', 'solusi', 'keterangan solusi', 'aksi']" />
     </section>
 
     {{-- Modal --}}

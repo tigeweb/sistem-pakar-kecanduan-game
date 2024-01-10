@@ -24,6 +24,8 @@ class JenisPerilakuRequest extends FormRequest
         return [
             'kode_jenis' => ['required', 'string', 'max:10'],
             'nama_jenis' => ['required', 'string', 'max:255'],
+            'solusi' => ['required', 'string', 'max:100'],
+            'keterangan_solusi' => ['required', 'string'],
         ];
     }
 

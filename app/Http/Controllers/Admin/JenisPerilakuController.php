@@ -13,7 +13,7 @@ class JenisPerilakuController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = JenisPerilaku::select(['id', 'kode_jenis', 'nama_jenis']);
+            $data = JenisPerilaku::select(['id', 'kode_jenis', 'nama_jenis', 'solusi', 'keterangan_solusi']);
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('DT_RowIndex', function ($data) {

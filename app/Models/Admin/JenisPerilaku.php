@@ -12,5 +12,7 @@ class JenisPerilaku extends Model
     protected $fillable = [
         'kode_jenis',
         'nama_jenis',
+        'solusi',
+        'keterangan_solusi',
     ];
 }

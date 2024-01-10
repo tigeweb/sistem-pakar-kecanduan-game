@@ -20,6 +20,14 @@ $(document).ready(function () {
             name: "nama_jenis",
         },
         {
+            data: "solusi",
+            name: "solusi",
+        },
+        {
+            data: "keterangan_solusi",
+            name: "keterangan_solusi",
+        },
+        {
             data: "aksi",
             name: "aksi",
             orderable: false,
@@ -35,7 +43,7 @@ $(document).ready(function () {
         },
         {
             targets: [1],
-            width: "100px",
+            width: "10%",
             className: "word-wrap text-center",
         },
         {
@@ -45,6 +53,16 @@ $(document).ready(function () {
         },
         {
             targets: [3],
+            width: "100px",
+            className: "word-wrap",
+        },
+        {
+            targets: [4],
+            width: "200px",
+            className: "word-wrap",
+        },
+        {
+            targets: [5],
             width: "13%",
             className: "text-center",
         },

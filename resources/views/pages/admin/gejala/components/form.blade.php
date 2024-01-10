@@ -22,5 +22,5 @@
 </div>
 <div class="row">
     <x-forms.textarea-group label="deskripsi gejala" id="deskripsi_gejala" name="deskripsi_gejala"
-        placeholder="masukkan deskripsi gejala..." value="{{ $gejala }}" disabled="{{ $disabled }}" />
+        placeholder="Masukkan Deskripsi Gejala..." value="{{ $gejala }}" disabled="{{ $disabled }}" />
 </div>
