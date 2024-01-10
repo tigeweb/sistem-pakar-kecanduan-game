@@ -18,20 +18,6 @@
                     <button class="btn-suc" id="save-copyright"><i class="bi bi-check2"></i></button>
                 </div>
             </div>
-            <div class="col-sm-6 mb-3">
-                <label class="form-label" for="lisensi">Lisensi Tigeweb</label>
-                @php
-                    $lisensi = get_setting(\App\Enums\SettingEnum::LISENSI->value);
-                @endphp
-                <div class="my-auto">
-                    <button class="{{ $lisensi == '1' ? 'btn-del' : 'btn-suc' }} me-2" id="btn-lisensi"
-                        value="{{ $lisensi == '1' ? '0' : '1' }}">
-                        {!! $lisensi == '1'
-                            ? '<i class="bi bi-eye-slash-fill"></i> Sembunyikan'
-                            : '<i class="bi bi-eye-fill"></i> Tampilkan' !!}
-                    </button>
-                </div>
-            </div>
         </div>
     </section>
 @endsection
@@ -63,36 +49,6 @@
                 complete: function() {
                     $('#save-copyright').prop("disabled", false);
                     $('#save-copyright').html(originalBtnText);
-                },
-            });
-        })
-
-        $('#btn-lisensi').on('click', function() {
-            $(this).html(
-                '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...'
-            );
-            const formData = new FormData();
-            formData.append('val', $('#btn-lisensi').val());
-            formData.append('tipe', "{{ \App\Enums\SettingEnum::LISENSI->value }}");
-            $.ajax({
-                url: "{{ route('admin.pengaturan.ajax.update') }}",
-                type: "POST",
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(res) {
-                    $('#val-lisensi').toggleClass('d-none');
-                    $('#btn-lisensi').val(res.data == '1' ? '0' : '1');
-                    $('#btn-lisensi').html(res.data == '1' ?
-                        '<i class="bi bi-eye-slash-fill"></i> Sembunyikan' :
-                        '<i class="bi bi-eye-fill"></i> Tampilkan');
-                    showSwal("mixin", res.message, "success");
-                },
-                error: function(res) {
-                    showSwal("mixin", res.message, "error");
-                },
-                complete: function() {
-                    $('#btn-lisensi').toggleClass('btn-del btn-suc');
                 },
             });
         })

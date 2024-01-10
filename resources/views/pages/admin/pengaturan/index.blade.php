@@ -17,10 +17,6 @@
                 <i class="bi bi-layout-text-sidebar"></i>
                 <h5>Edit Logo Title</h5>
             </a>
-            <a class="menu-pengaturan" href="{{ route('admin.pengaturan.edit-gambar-sidebar.index') }}">
-                <i class="bi bi-layout-sidebar-inset"></i>
-                <h5>Edit Gambar Sidebar</h5>
-            </a>
             <a class="menu-pengaturan" href="{{ route('admin.pengaturan.edit-footer.index') }}">
                 <i class="bi bi-layers-half"></i>
                 <h5>Edit Footer</h5>
