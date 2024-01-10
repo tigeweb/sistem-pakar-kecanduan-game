@@ -18,3 +18,9 @@
         </div>
     </div>
 </form>
+<script>
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+</script>
