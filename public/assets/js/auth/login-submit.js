@@ -69,12 +69,12 @@ function loginSubmit(formId, id) {
 
                 $.each(errors, function (key, value) {
                     if (key == "password") {
-                        $("#" + key + "_" + id)
+                        $("." + key)
                             .parent("div")
                             .addClass("is-invalid");
-                        $("#" + key + "_" + id).addClass("is-invalid");
+                        $("." + key).addClass("is-invalid");
                     } else {
-                        $("#" + key + "_" + id).addClass("is-invalid");
+                        $("." + key).addClass("is-invalid");
                     }
                     $("label.error_" + key).text(value[0]);
                 });
