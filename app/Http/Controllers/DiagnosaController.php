@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin\Gejala;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class DiagnosaController extends Controller
 {
@@ -14,8 +15,22 @@ class DiagnosaController extends Controller
         ]);
     }
 
+    public function get_data()
+    {
+        return response()->view('pages.diagnosa.components.form', [
+            'deskripsi_gejala' => Gejala::select(['id', 'deskripsi_gejala'])->get(),
+            'csrf' => csrf_token()
+        ]);
+    }
+
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'gejala.*' => 'required_if:gejala.*,null',
+        ], [
+            'gejala.*.required_if' => 'Field ini wajib diisi !'
+        ]);
+        if ($validator->fails()) return response()->json(['errors' => $validator->errors()], 422);
         $groupedData = [];
         $groupedDataJenis = [];
         foreach ($request->gejala as $id => $gejalaTrueFalse) {
@@ -41,14 +56,17 @@ class DiagnosaController extends Controller
 
         if (count($groupedDataJenis) >= 3) {
             $kecanduan = 'Kecanduan Game';
+            $color = 'danger';
         } else {
             $kecanduan = 'Tidak Kecanduan Game';
+            $color = 'success';
         }
 
         return view('pages.diagnosa.components.hasil-diagnosa', [
             'data' => $groupedDataJenis,
             // 'data_jenis' => $groupedDataJenis,
-            'kecanduan' => $kecanduan
+            'kecanduan' => $kecanduan,
+            'color' => $color
         ]);
     }
 }

@@ -3,9 +3,9 @@
         <img src="{{ get_setting(\App\Enums\SettingEnum::LOGO->value) }}" id="logo-sidebar" alt="logo perusahaan">
         <h5 class="logo-title">{{ get_setting(\App\Enums\SettingEnum::LOGO_TITLE->value) }}</h5>
         <div class="logo-mobile">
-            <span>M</span>
+            <span>P</span>
+            <span>K</span>
             <span>R</span>
-            <span>T</span>
         </div>
         <div class="btn-sidebar">
             <div class="toggle open">

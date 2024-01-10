@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\GejalaController;
 use App\Http\Controllers\Admin\JenisPerilakuController;
 use App\Http\Controllers\Admin\PengaturanController;
 use App\Http\Controllers\DiagnosaController;
+use App\Models\Admin\Gejala;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return redirect(route('diagnosa.index'));
 });
+Route::post('gejala-form', [DiagnosaController::class, 'get_data'])->name('diagnosa.get_data');
 
 // Akses Admin
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->group(function () {

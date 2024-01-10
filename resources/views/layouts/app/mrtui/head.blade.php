@@ -9,6 +9,7 @@
 <!-- End layout styles -->
 
 {{-- Favicon --}}
+<link rel="shortcut icon" href="{{ get_setting(\App\Enums\SettingEnum::LOGO->value) }}" type="image/x-icon">
 {{-- End Favicon --}}
 
 {{-- Custom Styles --}}
