@@ -2,7 +2,6 @@
 @section('title')
     <h3>Halaman Edit Logo</h3>
     <x-breadcrumb :items="[
-        ['text' => 'Dashboard', 'link' => route('admin.dashboard.index')],
         ['text' => 'Pengaturan', 'link' => route('admin.pengaturan.index')],
         ['text' => 'Edit Logo Title', 'link' => null],
     ]" />

@@ -1,6 +1,6 @@
 @extends('layouts.app.mrtui.app')
 @section('title')
-    <h3>Diagnosa</h3>
+    <h3>Halaman Diagnosa</h3>
     <x-breadcrumb :items="[['text' => 'Diagnosa', 'link' => null]]" />
 @endsection
 @section('contents')

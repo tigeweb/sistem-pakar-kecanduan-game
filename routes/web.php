@@ -26,12 +26,6 @@ Route::get('/', function () {
 // Akses Admin
 Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->group(function () {
 
-    // Dashboard
-    Route::controller(DashboardController::class)->name('dashboard.')->group(function () {
-        Route::get('dashboard', 'index')->name('index');
-    });
-    // End Dashboard
-
     // Jenis Perilaku
     Route::resource('jenis-perilaku', JenisPerilakuController::class)->except(['create', 'show']);
     // End Jenis Perilaku

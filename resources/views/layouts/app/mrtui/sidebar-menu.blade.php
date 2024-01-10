@@ -1,7 +1,5 @@
 <div class="menu">
 
-    <x-sidebar-menu.single-menu route="admin.dashboard.index" title="Dashboard" icon="bi-grid" />
-
     {{-- Akses Admin --}}
     <x-sidebar-menu.single-menu route="admin.jenis-perilaku.index" title="Jenis Perilaku" icon="bi-question-square" />
     <x-sidebar-menu.single-menu route="admin.gejala.index" title="Gejala" icon="bi-activity" />

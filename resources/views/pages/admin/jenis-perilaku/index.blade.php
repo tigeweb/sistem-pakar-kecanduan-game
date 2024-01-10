@@ -1,10 +1,7 @@
 @extends('layouts.app.mrtui.app')
 @section('title')
-    <h3>Jenis Perilaku Kecanduan Game</h3>
-    <x-breadcrumb :items="[
-        ['text' => 'Dashboard', 'link' => route('admin.dashboard.index')],
-        ['text' => 'Jenis Perilaku Kecanduan Game', 'link' => null],
-    ]" />
+    <h3>Halaman Jenis Perilaku Kecanduan Game</h3>
+    <x-breadcrumb :items="[['text' => 'Jenis Perilaku Kecanduan Game', 'link' => null]]" />
 @endsection
 @section('contents')
     <section class="menu-section mt-4">
