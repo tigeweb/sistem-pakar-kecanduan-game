@@ -20,12 +20,5 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('password123'),
         ]);
         $admin->assignRole('Admin');
-
-        if (env('SEEDER_USERS')) {
-            $users = User::factory(env('SEEDER_USERS'))->create();
-            foreach ($users as $user) {
-                $user->assignRole('Admin');
-            }
-        }
     }
 }
