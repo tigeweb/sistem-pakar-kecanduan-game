@@ -31,11 +31,13 @@
             @endforeach
 
             <x-buttons.btn-save value="Simpan" id="submitBtn" />
+
+            <div id="hasil-diagnosa"></div>
         </form>
     </section>
 @endsection
 
-{{-- @push('script')
+@push('script')
     <script>
         $(document).ready(function() {
             $("#formActionPost").on("submit", function(e) {
@@ -67,8 +69,9 @@
                         resetError();
                     },
                     success: function(res) {
-                        showSwal("mixin", res.message, "success");
-                        form[0].reset();
+                        showSwal("mixin", 'Berhasil melakukan diagnosa', "success");
+                        // form[0].reset();
+                        $("#hasil-diagnosa").html(res);
                     },
                     error: function(res) {
                         if (res.status === 500) {
@@ -90,5 +93,10 @@
                 });
             });
         });
+
+        function resetError() {
+            $(".is-invalid").removeClass("is-invalid");
+            $(".invalid-feedback").html("");
+        }
     </script>
-@endpush --}}
+@endpush
